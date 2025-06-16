@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Mini Ecommerce kategoriyasi -->
+        <record model="ir.module.category" id="module_category_mini_ecommerce">
+            <field name="name">Mini Ecommerce</field>
+            <field name="description">Mini Ecommerce tizimiga kirish</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <!-- Admin guruhi -->
+        <record model="res.groups" id="group_mini_ecommerce_admin">
+            <field name="name">Mini Ecommerce Admin</field>
+            <field name="category_id" ref="module_category_mini_ecommerce"/>
+            <field name="comment">Barcha ma'lumotlar ustida to'liq huquq</field>
+        </record>
+
+        <!-- Sotuvchi guruhi -->
+        <record model="res.groups" id="group_mini_ecommerce_salesperson">
+            <field name="name">Mini Ecommerce Sotuvchi</field>
+            <field name="category_id" ref="module_category_mini_ecommerce"/>
+            <field name="comment">Buyurtmalar va mijozlar ustida to'liq huquq, qolganlarini faqat ko'rish</field>
+        </record>
+
+        <!-- Kontent to'ldiruvchi guruhi -->
+        <record model="res.groups" id="group_mini_ecommerce_content_manager">
+            <field name="name">Mini Ecommerce Kontent Menejer</field>
+            <field name="category_id" ref="module_category_mini_ecommerce"/>
+            <field name="comment">Mahsulot va toifalar ustida to'liq huquq</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Toifalar Tree View -->
+    <record id="category_tree_view" model="ir.ui.view">
+        <field name="name">mini.category.tree</field>
+        <field name="model">mini.category</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="product_count"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Toifalar Form View -->
+    <record id="category_form_view" model="ir.ui.view">
+        <field name="name">mini.category.form</field>
+        <field name="model">mini.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                    <notebook>
+                        <page string="Mahsulotlar">
+                            <field name="product_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="price"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Toifalar Action -->
+    <record id="category_action" model="ir.actions.act_window">
+        <field name="name">Toifalar</field>
+        <field name="res_model">mini.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

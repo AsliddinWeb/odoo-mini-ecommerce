@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Asosiy menu -->
+    <menuitem id="mini_ecommerce_menu_root" name="Mini Ecommerce" sequence="10"/>
+
+    <!-- Sotuv bo'limi -->
+    <menuitem id="mini_ecommerce_sales_menu" name="Sotuv" parent="mini_ecommerce_menu_root" sequence="10"/>
+    <menuitem id="customer_menu" name="Mijozlar" parent="mini_ecommerce_sales_menu" action="customer_action" sequence="10"/>
+    <menuitem id="order_menu" name="Buyurtmalar" parent="mini_ecommerce_sales_menu" action="order_action" sequence="20"/>
+
+    <!-- Mahsulotlar bo'limi -->
+    <menuitem id="mini_ecommerce_products_menu" name="Mahsulotlar" parent="mini_ecommerce_menu_root" sequence="20"/>
+    <menuitem id="product_menu" name="Mahsulotlar" parent="mini_ecommerce_products_menu" action="product_action" sequence="10"/>
+    <menuitem id="category_menu" name="Toifalar" parent="mini_ecommerce_products_menu" action="category_action" sequence="20"/>
+</odoo>
