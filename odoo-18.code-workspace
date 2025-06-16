@@ -1,0 +1,3213 @@
+{
+  "settings": {
+    "python.autoComplete.extraPaths": [
+      "/home/lenovo/work/projects/odoo-18/src/"
+    ],
+    "python.defaultInterpreterPath": "/usr/local/bin/python3",
+    "search.followSymlinks": false,
+    "search.useIgnoreFiles": false,
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[markdown]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[yaml]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[xml]": {
+      "editor.formatOnSave": false
+    }
+  },
+  "launch": {
+    "compounds": [
+      {
+        "name": "Start Odoo and debug Python",
+        "configurations": [
+          "Attach Python debugger to running container"
+        ],
+        "preLaunchTask": "Start Odoo in debug mode"
+      },
+      {
+        "name": "Test and debug current module",
+        "configurations": [
+          "Attach Python debugger to running container"
+        ],
+        "preLaunchTask": "Run Odoo Tests in debug mode for current module",
+        "internalConsoleOptions": "openOnSessionStart"
+      }
+    ],
+    "configurations": [
+      {
+        "name": "Attach Python debugger to running container",
+        "type": "python",
+        "request": "attach",
+        "pathMappings": [
+          {
+            "localRoot": "${workspaceFolder:odoo}/",
+            "remoteRoot": "/odoo/odoo"
+          }
+        ],
+        "port": 18899,
+        "host": "0.0.0.0"
+      },
+      {
+        "type": "firefox",
+        "request": "launch",
+        "reAttach": true,
+        "name": "Connect to firefox debugger",
+        "url": "http://localhost:18069/?debug=assets",
+        "reloadOnChange": {
+          "watch": "${workspaceFolder:odoo-18}/src/local/**/*.{js,css,scss,less}"
+        },
+        "skipFiles": [
+          "**/lib/**"
+        ],
+        "pathMappings": [
+          {
+            "url": "http://localhost:18069/spreadsheet_dashboard_hr_timesheet/static/",
+            "path": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_hr_timesheet/static/"
+          },
+          {
+            "url": "http://localhost:18069/account_peppol/static/",
+            "path": "${workspaceFolder:odoo}/addons/account_peppol/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_sale_wishlist/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_sale_wishlist/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_es_edi_tbai_pos/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_es_edi_tbai_pos/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_pdf_quote_builder/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_pdf_quote_builder/static/"
+          },
+          {
+            "url": "http://localhost:18069/portal/static/",
+            "path": "${workspaceFolder:odoo}/addons/portal/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_in_ewaybill_stock/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_in_ewaybill_stock/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_blog/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_blog/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_in_hr_holidays/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_in_hr_holidays/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ci/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ci/static/"
+          },
+          {
+            "url": "http://localhost:18069/mass_mailing_event_track/static/",
+            "path": "${workspaceFolder:odoo}/addons/mass_mailing_event_track/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_hu/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_hu/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_project_stock/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_project_stock/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_holidays/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_holidays/static/"
+          },
+          {
+            "url": "http://localhost:18069/purchase/static/",
+            "path": "${workspaceFolder:odoo}/addons/purchase/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_holidays_contract/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_holidays_contract/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_be_pos_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_be_pos_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_membership/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_membership/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_fr/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_fr/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_km/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_km/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_jp/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_jp/static/"
+          },
+          {
+            "url": "http://localhost:18069/iap/static/",
+            "path": "${workspaceFolder:odoo}/addons/iap/static/"
+          },
+          {
+            "url": "http://localhost:18069/lunch/static/",
+            "path": "${workspaceFolder:odoo}/addons/lunch/static/"
+          },
+          {
+            "url": "http://localhost:18069/spreadsheet_dashboard_stock_account/static/",
+            "path": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_stock_account/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_dk/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_dk/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_expense/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_expense/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_self_order_stripe/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_self_order_stripe/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_sn/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_sn/static/"
+          },
+          {
+            "url": "http://localhost:18069/project_mrp_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/project_mrp_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_online_payment/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_online_payment/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_purchase/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_purchase/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_gcc_invoice/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_gcc_invoice/static/"
+          },
+          {
+            "url": "http://localhost:18069/survey/static/",
+            "path": "${workspaceFolder:odoo}/addons/survey/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ro_edi/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ro_edi/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_td/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_td/static/"
+          },
+          {
+            "url": "http://localhost:18069/account_edi_proxy_client/static/",
+            "path": "${workspaceFolder:odoo}/addons/account_edi_proxy_client/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_it_edi_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_it_edi_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/test_import_export/static/",
+            "path": "${workspaceFolder:odoo}/addons/test_import_export/static/"
+          },
+          {
+            "url": "http://localhost:18069/test_mass_mailing/static/",
+            "path": "${workspaceFolder:odoo}/addons/test_mass_mailing/static/"
+          },
+          {
+            "url": "http://localhost:18069/mrp_repair/static/",
+            "path": "${workspaceFolder:odoo}/addons/mrp_repair/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_bo/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_bo/static/"
+          },
+          {
+            "url": "http://localhost:18069/payment_worldline/static/",
+            "path": "${workspaceFolder:odoo}/addons/payment_worldline/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_online_payment_self_order/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_online_payment_self_order/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_sale_autocomplete/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_sale_autocomplete/static/"
+          },
+          {
+            "url": "http://localhost:18069/account_tax_python/static/",
+            "path": "${workspaceFolder:odoo}/addons/account_tax_python/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_gamification/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_gamification/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_six/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_six/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_id_efaktur/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_id_efaktur/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_margin/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_margin/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_tr/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_tr/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_account_edi_ubl_cii_tests/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_account_edi_ubl_cii_tests/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_cr/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_cr/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_customer/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_customer/static/"
+          },
+          {
+            "url": "http://localhost:18069/base_install_request/static/",
+            "path": "${workspaceFolder:odoo}/addons/base_install_request/static/"
+          },
+          {
+            "url": "http://localhost:18069/mass_mailing/static/",
+            "path": "${workspaceFolder:odoo}/addons/mass_mailing/static/"
+          },
+          {
+            "url": "http://localhost:18069/account_fleet/static/",
+            "path": "${workspaceFolder:odoo}/addons/account_fleet/static/"
+          },
+          {
+            "url": "http://localhost:18069/event_booth_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/event_booth_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_service/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_service/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_latam_base/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_latam_base/static/"
+          },
+          {
+            "url": "http://localhost:18069/crm_iap_enrich/static/",
+            "path": "${workspaceFolder:odoo}/addons/crm_iap_enrich/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_gt/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_gt/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_gw/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_gw/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_in_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_in_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_gn/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_gn/static/"
+          },
+          {
+            "url": "http://localhost:18069/account_edi/static/",
+            "path": "${workspaceFolder:odoo}/addons/account_edi/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_sk/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_sk/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_razorpay/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_razorpay/static/"
+          },
+          {
+            "url": "http://localhost:18069/project_stock/static/",
+            "path": "${workspaceFolder:odoo}/addons/project_stock/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_homeworking/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_homeworking/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_jo/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_jo/static/"
+          },
+          {
+            "url": "http://localhost:18069/digest/static/",
+            "path": "${workspaceFolder:odoo}/addons/digest/static/"
+          },
+          {
+            "url": "http://localhost:18069/snailmail/static/",
+            "path": "${workspaceFolder:odoo}/addons/snailmail/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_maintenance/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_maintenance/static/"
+          },
+          {
+            "url": "http://localhost:18069/mrp_subcontracting_dropshipping/static/",
+            "path": "${workspaceFolder:odoo}/addons/mrp_subcontracting_dropshipping/static/"
+          },
+          {
+            "url": "http://localhost:18069/web_editor/static/",
+            "path": "${workspaceFolder:odoo}/addons/web_editor/static/"
+          },
+          {
+            "url": "http://localhost:18069/spreadsheet_dashboard_sale_timesheet/static/",
+            "path": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_sale_timesheet/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_event_booth_exhibitor/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_event_booth_exhibitor/static/"
+          },
+          {
+            "url": "http://localhost:18069/account/static/",
+            "path": "${workspaceFolder:odoo}/addons/account/static/"
+          },
+          {
+            "url": "http://localhost:18069/uom/static/",
+            "path": "${workspaceFolder:odoo}/addons/uom/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_tr_nilvera/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_tr_nilvera/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_mrp_margin/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_mrp_margin/static/"
+          },
+          {
+            "url": "http://localhost:18069/spreadsheet_dashboard_pos_restaurant/static/",
+            "path": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_pos_restaurant/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_crm/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_crm/static/"
+          },
+          {
+            "url": "http://localhost:18069/gamification_sale_crm/static/",
+            "path": "${workspaceFolder:odoo}/addons/gamification_sale_crm/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_eg/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_eg/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_project/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_project/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_kz/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_kz/static/"
+          },
+          {
+            "url": "http://localhost:18069/sales_team/static/",
+            "path": "${workspaceFolder:odoo}/addons/sales_team/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_sale_loyalty/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_sale_loyalty/static/"
+          },
+          {
+            "url": "http://localhost:18069/barcodes_gs1_nomenclature/static/",
+            "path": "${workspaceFolder:odoo}/addons/barcodes_gs1_nomenclature/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_my_ubl_pint/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_my_ubl_pint/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_pt/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_pt/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_sale_collect/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_sale_collect/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ca/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ca/static/"
+          },
+          {
+            "url": "http://localhost:18069/calendar/static/",
+            "path": "${workspaceFolder:odoo}/addons/calendar/static/"
+          },
+          {
+            "url": "http://localhost:18069/payment_stripe/static/",
+            "path": "${workspaceFolder:odoo}/addons/payment_stripe/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_event/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_event/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_restaurant_adyen/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_restaurant_adyen/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_sa_edi_pos/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_sa_edi_pos/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_bd/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_bd/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_at/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_at/static/"
+          },
+          {
+            "url": "http://localhost:18069/test_resource/static/",
+            "path": "${workspaceFolder:odoo}/addons/test_resource/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_it_stock_ddt/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_it_stock_ddt/static/"
+          },
+          {
+            "url": "http://localhost:18069/payment_demo/static/",
+            "path": "${workspaceFolder:odoo}/addons/payment_demo/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_work_entry_contract/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_work_entry_contract/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_expense/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_expense/static/"
+          },
+          {
+            "url": "http://localhost:18069/repair/static/",
+            "path": "${workspaceFolder:odoo}/addons/repair/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_br_sales/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_br_sales/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_in_withholding_payment/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_in_withholding_payment/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_profile/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_profile/static/"
+          },
+          {
+            "url": "http://localhost:18069/certificate/static/",
+            "path": "${workspaceFolder:odoo}/addons/certificate/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_mass_mailing/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_mass_mailing/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_org_chart/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_org_chart/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_contract/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_contract/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_cy/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_cy/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_loyalty_delivery/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_loyalty_delivery/static/"
+          },
+          {
+            "url": "http://localhost:18069/sms/static/",
+            "path": "${workspaceFolder:odoo}/addons/sms/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_expense_margin/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_expense_margin/static/"
+          },
+          {
+            "url": "http://localhost:18069/crm_sms/static/",
+            "path": "${workspaceFolder:odoo}/addons/crm_sms/static/"
+          },
+          {
+            "url": "http://localhost:18069/purchase_requisition_stock/static/",
+            "path": "${workspaceFolder:odoo}/addons/purchase_requisition_stock/static/"
+          },
+          {
+            "url": "http://localhost:18069/test_website_modules/static/",
+            "path": "${workspaceFolder:odoo}/addons/test_website_modules/static/"
+          },
+          {
+            "url": "http://localhost:18069/auth_passkey/static/",
+            "path": "${workspaceFolder:odoo}/addons/auth_passkey/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ga/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ga/static/"
+          },
+          {
+            "url": "http://localhost:18069/base_setup/static/",
+            "path": "${workspaceFolder:odoo}/addons/base_setup/static/"
+          },
+          {
+            "url": "http://localhost:18069/portal_rating/static/",
+            "path": "${workspaceFolder:odoo}/addons/portal_rating/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_din5008_stock/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_din5008_stock/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_mrp/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_mrp/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_recruitment/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_recruitment/static/"
+          },
+          {
+            "url": "http://localhost:18069/test_crm_full/static/",
+            "path": "${workspaceFolder:odoo}/addons/test_crm_full/static/"
+          },
+          {
+            "url": "http://localhost:18069/account_check_printing/static/",
+            "path": "${workspaceFolder:odoo}/addons/account_check_printing/static/"
+          },
+          {
+            "url": "http://localhost:18069/data_recycle/static/",
+            "path": "${workspaceFolder:odoo}/addons/data_recycle/static/"
+          },
+          {
+            "url": "http://localhost:18069/hw_drivers/static/",
+            "path": "${workspaceFolder:odoo}/addons/hw_drivers/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_lv/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_lv/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_epson_printer/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_epson_printer/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_il/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_il/static/"
+          },
+          {
+            "url": "http://localhost:18069/test_website/static/",
+            "path": "${workspaceFolder:odoo}/addons/test_website/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_syscohada/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_syscohada/static/"
+          },
+          {
+            "url": "http://localhost:18069/account_update_tax_tags/static/",
+            "path": "${workspaceFolder:odoo}/addons/account_update_tax_tags/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_es_edi_sii/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_es_edi_sii/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ee/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ee/static/"
+          },
+          {
+            "url": "http://localhost:18069/project_mail_plugin/static/",
+            "path": "${workspaceFolder:odoo}/addons/project_mail_plugin/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_recruitment_skills/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_recruitment_skills/static/"
+          },
+          {
+            "url": "http://localhost:18069/stock_landed_costs/static/",
+            "path": "${workspaceFolder:odoo}/addons/stock_landed_costs/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_pa/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_pa/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_cz/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_cz/static/"
+          },
+          {
+            "url": "http://localhost:18069/attachment_indexation/static/",
+            "path": "${workspaceFolder:odoo}/addons/attachment_indexation/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_test_pos_qr_payment/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_test_pos_qr_payment/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_in_purchase/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_in_purchase/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_sg_ubl_pint/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_sg_ubl_pint/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_vn/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_vn/static/"
+          },
+          {
+            "url": "http://localhost:18069/test_sale_purchase_edi_ubl/static/",
+            "path": "${workspaceFolder:odoo}/addons/test_sale_purchase_edi_ubl/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_din5008_repair/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_din5008_repair/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_discount/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_discount/static/"
+          },
+          {
+            "url": "http://localhost:18069/payment_custom/static/",
+            "path": "${workspaceFolder:odoo}/addons/payment_custom/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_mu_account/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_mu_account/static/"
+          },
+          {
+            "url": "http://localhost:18069/mass_mailing_event_sms/static/",
+            "path": "${workspaceFolder:odoo}/addons/mass_mailing_event_sms/static/"
+          },
+          {
+            "url": "http://localhost:18069/crm/static/",
+            "path": "${workspaceFolder:odoo}/addons/crm/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_my_edi_extended/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_my_edi_extended/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_livechat/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_livechat/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_mail/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_mail/static/"
+          },
+          {
+            "url": "http://localhost:18069/contacts/static/",
+            "path": "${workspaceFolder:odoo}/addons/contacts/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ph/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ph/static/"
+          },
+          {
+            "url": "http://localhost:18069/stock_picking_batch/static/",
+            "path": "${workspaceFolder:odoo}/addons/stock_picking_batch/static/"
+          },
+          {
+            "url": "http://localhost:18069/event_booth/static/",
+            "path": "${workspaceFolder:odoo}/addons/event_booth/static/"
+          },
+          {
+            "url": "http://localhost:18069/account_debit_note/static/",
+            "path": "${workspaceFolder:odoo}/addons/account_debit_note/static/"
+          },
+          {
+            "url": "http://localhost:18069/membership/static/",
+            "path": "${workspaceFolder:odoo}/addons/membership/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_sale_comparison/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_sale_comparison/static/"
+          },
+          {
+            "url": "http://localhost:18069/test_hr_contract_calendar/static/",
+            "path": "${workspaceFolder:odoo}/addons/test_hr_contract_calendar/static/"
+          },
+          {
+            "url": "http://localhost:18069/auth_totp_mail_enforce/static/",
+            "path": "${workspaceFolder:odoo}/addons/auth_totp_mail_enforce/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_es_modelo130/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_es_modelo130/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_eg_edi_eta/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_eg_edi_eta/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_lu/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_lu/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_bg/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_bg/static/"
+          },
+          {
+            "url": "http://localhost:18069/im_livechat/static/",
+            "path": "${workspaceFolder:odoo}/addons/im_livechat/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_mn/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_mn/static/"
+          },
+          {
+            "url": "http://localhost:18069/google_recaptcha/static/",
+            "path": "${workspaceFolder:odoo}/addons/google_recaptcha/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_nl/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_nl/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_si/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_si/static/"
+          },
+          {
+            "url": "http://localhost:18069/website/static/",
+            "path": "${workspaceFolder:odoo}/addons/website/static/"
+          },
+          {
+            "url": "http://localhost:18069/purchase_repair/static/",
+            "path": "${workspaceFolder:odoo}/addons/purchase_repair/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_hr_recruitment/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_hr_recruitment/static/"
+          },
+          {
+            "url": "http://localhost:18069/crm_mail_plugin/static/",
+            "path": "${workspaceFolder:odoo}/addons/crm_mail_plugin/static/"
+          },
+          {
+            "url": "http://localhost:18069/mass_mailing_slides/static/",
+            "path": "${workspaceFolder:odoo}/addons/mass_mailing_slides/static/"
+          },
+          {
+            "url": "http://localhost:18069/account_qr_code_emv/static/",
+            "path": "${workspaceFolder:odoo}/addons/account_qr_code_emv/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_pl/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_pl/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_it_edi/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_it_edi/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_paytm/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_paytm/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_crm_sms/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_crm_sms/static/"
+          },
+          {
+            "url": "http://localhost:18069/google_calendar/static/",
+            "path": "${workspaceFolder:odoo}/addons/google_calendar/static/"
+          },
+          {
+            "url": "http://localhost:18069/payment_buckaroo/static/",
+            "path": "${workspaceFolder:odoo}/addons/payment_buckaroo/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_edi_ubl/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_edi_ubl/static/"
+          },
+          {
+            "url": "http://localhost:18069/purchase_mrp/static/",
+            "path": "${workspaceFolder:odoo}/addons/purchase_mrp/static/"
+          },
+          {
+            "url": "http://localhost:18069/phone_validation/static/",
+            "path": "${workspaceFolder:odoo}/addons/phone_validation/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_it_edi_ndd/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_it_edi_ndd/static/"
+          },
+          {
+            "url": "http://localhost:18069/base_import/static/",
+            "path": "${workspaceFolder:odoo}/addons/base_import/static/"
+          },
+          {
+            "url": "http://localhost:18069/event_crm_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/event_crm_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_id_efaktur_coretax/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_id_efaktur_coretax/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_eu_oss/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_eu_oss/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_cf_turnstile/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_cf_turnstile/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_us/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_us/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_skills_survey/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_skills_survey/static/"
+          },
+          {
+            "url": "http://localhost:18069/delivery/static/",
+            "path": "${workspaceFolder:odoo}/addons/delivery/static/"
+          },
+          {
+            "url": "http://localhost:18069/cloud_storage_google/static/",
+            "path": "${workspaceFolder:odoo}/addons/cloud_storage_google/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_gelato/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_gelato/static/"
+          },
+          {
+            "url": "http://localhost:18069/project_mrp_stock_landed_costs/static/",
+            "path": "${workspaceFolder:odoo}/addons/project_mrp_stock_landed_costs/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_cd/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_cd/static/"
+          },
+          {
+            "url": "http://localhost:18069/mrp/static/",
+            "path": "${workspaceFolder:odoo}/addons/mrp/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_recruitment_survey/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_recruitment_survey/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_mx/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_mx/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_fi/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_fi/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_mass_mailing_sms/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_mass_mailing_sms/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_sale_gelato/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_sale_gelato/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_sale_loyalty/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_sale_loyalty/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_event_track/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_event_track/static/"
+          },
+          {
+            "url": "http://localhost:18069/social_media/static/",
+            "path": "${workspaceFolder:odoo}/addons/social_media/static/"
+          },
+          {
+            "url": "http://localhost:18069/stock_dropshipping/static/",
+            "path": "${workspaceFolder:odoo}/addons/stock_dropshipping/static/"
+          },
+          {
+            "url": "http://localhost:18069/event_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/event_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/mass_mailing_themes/static/",
+            "path": "${workspaceFolder:odoo}/addons/mass_mailing_themes/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_lt/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_lt/static/"
+          },
+          {
+            "url": "http://localhost:18069/project_stock_landed_costs/static/",
+            "path": "${workspaceFolder:odoo}/addons/project_stock_landed_costs/static/"
+          },
+          {
+            "url": "http://localhost:18069/auth_ldap/static/",
+            "path": "${workspaceFolder:odoo}/addons/auth_ldap/static/"
+          },
+          {
+            "url": "http://localhost:18069/mrp_product_expiry/static/",
+            "path": "${workspaceFolder:odoo}/addons/mrp_product_expiry/static/"
+          },
+          {
+            "url": "http://localhost:18069/payment_authorize/static/",
+            "path": "${workspaceFolder:odoo}/addons/payment_authorize/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_event/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_event/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_purchase_project/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_purchase_project/static/"
+          },
+          {
+            "url": "http://localhost:18069/auth_signup/static/",
+            "path": "${workspaceFolder:odoo}/addons/auth_signup/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_sa_pos/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_sa_pos/static/"
+          },
+          {
+            "url": "http://localhost:18069/microsoft_calendar/static/",
+            "path": "${workspaceFolder:odoo}/addons/microsoft_calendar/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ec_website_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ec_website_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_in_edi/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_in_edi/static/"
+          },
+          {
+            "url": "http://localhost:18069/purchase_requisition_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/purchase_requisition_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ie/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ie/static/"
+          },
+          {
+            "url": "http://localhost:18069/product/static/",
+            "path": "${workspaceFolder:odoo}/addons/product/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_stock/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_stock/static/"
+          },
+          {
+            "url": "http://localhost:18069/product_images/static/",
+            "path": "${workspaceFolder:odoo}/addons/product_images/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ug/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ug/static/"
+          },
+          {
+            "url": "http://localhost:18069/test_discuss_full/static/",
+            "path": "${workspaceFolder:odoo}/addons/test_discuss_full/static/"
+          },
+          {
+            "url": "http://localhost:18069/transifex/static/",
+            "path": "${workspaceFolder:odoo}/addons/transifex/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_in_sale_stock/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_in_sale_stock/static/"
+          },
+          {
+            "url": "http://localhost:18069/project_purchase/static/",
+            "path": "${workspaceFolder:odoo}/addons/project_purchase/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ar_website_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ar_website_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/stock/static/",
+            "path": "${workspaceFolder:odoo}/addons/stock/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ar_withholding/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ar_withholding/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ng/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ng/static/"
+          },
+          {
+            "url": "http://localhost:18069/cloud_storage_azure/static/",
+            "path": "${workspaceFolder:odoo}/addons/cloud_storage_azure/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ch_pos/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ch_pos/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_hr_restaurant/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_hr_restaurant/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_cn_city/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_cn_city/static/"
+          },
+          {
+            "url": "http://localhost:18069/base_vat/static/",
+            "path": "${workspaceFolder:odoo}/addons/base_vat/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_event_booth_sale_exhibitor/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_event_booth_sale_exhibitor/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_bf/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_bf/static/"
+          },
+          {
+            "url": "http://localhost:18069/privacy_lookup/static/",
+            "path": "${workspaceFolder:odoo}/addons/privacy_lookup/static/"
+          },
+          {
+            "url": "http://localhost:18069/mrp_subcontracting_landed_costs/static/",
+            "path": "${workspaceFolder:odoo}/addons/mrp_subcontracting_landed_costs/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_in_purchase_stock/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_in_purchase_stock/static/"
+          },
+          {
+            "url": "http://localhost:18069/web/static/",
+            "path": "${workspaceFolder:odoo}/addons/web/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_livechat/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_livechat/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_cl/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_cl/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_uk/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_uk/static/"
+          },
+          {
+            "url": "http://localhost:18069/delivery_mondialrelay/static/",
+            "path": "${workspaceFolder:odoo}/addons/delivery_mondialrelay/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_rs/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_rs/static/"
+          },
+          {
+            "url": "http://localhost:18069/test_base_automation/static/",
+            "path": "${workspaceFolder:odoo}/addons/test_base_automation/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_mt/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_mt/static/"
+          },
+          {
+            "url": "http://localhost:18069/crm_iap_mine/static/",
+            "path": "${workspaceFolder:odoo}/addons/crm_iap_mine/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_kw/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_kw/static/"
+          },
+          {
+            "url": "http://localhost:18069/hw_escpos/static/",
+            "path": "${workspaceFolder:odoo}/addons/hw_escpos/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ke/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ke/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_it_edi_withholding/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_it_edi_withholding/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_crm_iap_reveal/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_crm_iap_reveal/static/"
+          },
+          {
+            "url": "http://localhost:18069/project_hr_expense/static/",
+            "path": "${workspaceFolder:odoo}/addons/project_hr_expense/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_anz_ubl_pint/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_anz_ubl_pint/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_fr_hr_holidays/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_fr_hr_holidays/static/"
+          },
+          {
+            "url": "http://localhost:18069/spreadsheet_account/static/",
+            "path": "${workspaceFolder:odoo}/addons/spreadsheet_account/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr/static/"
+          },
+          {
+            "url": "http://localhost:18069/project_account/static/",
+            "path": "${workspaceFolder:odoo}/addons/project_account/static/"
+          },
+          {
+            "url": "http://localhost:18069/account_edi_ubl_cii/static/",
+            "path": "${workspaceFolder:odoo}/addons/account_edi_ubl_cii/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_timesheet/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_timesheet/static/"
+          },
+          {
+            "url": "http://localhost:18069/mass_mailing_sale_sms/static/",
+            "path": "${workspaceFolder:odoo}/addons/mass_mailing_sale_sms/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ro/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ro/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ml/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ml/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_event_meet/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_event_meet/static/"
+          },
+          {
+            "url": "http://localhost:18069/stock_account/static/",
+            "path": "${workspaceFolder:odoo}/addons/stock_account/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_et/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_et/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_self_order_razorpay/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_self_order_razorpay/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_event_meet_quiz/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_event_meet_quiz/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_sale_mass_mailing/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_sale_mass_mailing/static/"
+          },
+          {
+            "url": "http://localhost:18069/rating/static/",
+            "path": "${workspaceFolder:odoo}/addons/rating/static/"
+          },
+          {
+            "url": "http://localhost:18069/resource/static/",
+            "path": "${workspaceFolder:odoo}/addons/resource/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_tr_nilvera_einvoice/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_tr_nilvera_einvoice/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ro_edi_stock_batch/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ro_edi_stock_batch/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_fr_hr_work_entry_holidays/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_fr_hr_work_entry_holidays/static/"
+          },
+          {
+            "url": "http://localhost:18069/product_expiry/static/",
+            "path": "${workspaceFolder:odoo}/addons/product_expiry/static/"
+          },
+          {
+            "url": "http://localhost:18069/auth_totp_mail/static/",
+            "path": "${workspaceFolder:odoo}/addons/auth_totp_mail/static/"
+          },
+          {
+            "url": "http://localhost:18069/link_tracker/static/",
+            "path": "${workspaceFolder:odoo}/addons/link_tracker/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_my/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_my/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_it_edi_doi/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_it_edi_doi/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_jitsi/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_jitsi/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ec_stock/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ec_stock/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_skills_slides/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_skills_slides/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_self_order_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_self_order_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_event_track_live/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_event_track_live/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_bh/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_bh/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_product_matrix/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_product_matrix/static/"
+          },
+          {
+            "url": "http://localhost:18069/resource_mail/static/",
+            "path": "${workspaceFolder:odoo}/addons/resource_mail/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_hr/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_hr/static/"
+          },
+          {
+            "url": "http://localhost:18069/test_mail_full/static/",
+            "path": "${workspaceFolder:odoo}/addons/test_mail_full/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_jp_ubl_pint/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_jp_ubl_pint/static/"
+          },
+          {
+            "url": "http://localhost:18069/mass_mailing_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/mass_mailing_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/microsoft_account/static/",
+            "path": "${workspaceFolder:odoo}/addons/microsoft_account/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ve/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ve/static/"
+          },
+          {
+            "url": "http://localhost:18069/auth_totp_portal/static/",
+            "path": "${workspaceFolder:odoo}/addons/auth_totp_portal/static/"
+          },
+          {
+            "url": "http://localhost:18069/test_event_full/static/",
+            "path": "${workspaceFolder:odoo}/addons/test_event_full/static/"
+          },
+          {
+            "url": "http://localhost:18069/spreadsheet_dashboard_account/static/",
+            "path": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_account/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_sms/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_sms/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_partner/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_partner/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_sa/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_sa/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_es_edi_facturae/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_es_edi_facturae/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_event_crm/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_event_crm/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_cf/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_cf/static/"
+          },
+          {
+            "url": "http://localhost:18069/mail_bot_hr/static/",
+            "path": "${workspaceFolder:odoo}/addons/mail_bot_hr/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_in_withholding/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_in_withholding/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_br_website_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_br_website_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/test_mail/static/",
+            "path": "${workspaceFolder:odoo}/addons/test_mail/static/"
+          },
+          {
+            "url": "http://localhost:18069/partner_autocomplete/static/",
+            "path": "${workspaceFolder:odoo}/addons/partner_autocomplete/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_homeworking_calendar/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_homeworking_calendar/static/"
+          },
+          {
+            "url": "http://localhost:18069/base_sparse_field/static/",
+            "path": "${workspaceFolder:odoo}/addons/base_sparse_field/static/"
+          },
+          {
+            "url": "http://localhost:18069/product_matrix/static/",
+            "path": "${workspaceFolder:odoo}/addons/product_matrix/static/"
+          },
+          {
+            "url": "http://localhost:18069/purchase_edi_ubl_bis3/static/",
+            "path": "${workspaceFolder:odoo}/addons/purchase_edi_ubl_bis3/static/"
+          },
+          {
+            "url": "http://localhost:18069/auth_totp/static/",
+            "path": "${workspaceFolder:odoo}/addons/auth_totp/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_payment_authorize/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_payment_authorize/static/"
+          },
+          {
+            "url": "http://localhost:18069/google_account/static/",
+            "path": "${workspaceFolder:odoo}/addons/google_account/static/"
+          },
+          {
+            "url": "http://localhost:18069/account_edi_ubl_cii_tax_extension/static/",
+            "path": "${workspaceFolder:odoo}/addons/account_edi_ubl_cii_tax_extension/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ec/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ec/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_google_map/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_google_map/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_links/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_links/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ke_edi_tremol/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ke_edi_tremol/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_in_edi_ewaybill/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_in_edi_ewaybill/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_pe/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_pe/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_timesheet/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_timesheet/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_jo_edi/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_jo_edi/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_latam_check/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_latam_check/static/"
+          },
+          {
+            "url": "http://localhost:18069/payment_mollie/static/",
+            "path": "${workspaceFolder:odoo}/addons/payment_mollie/static/"
+          },
+          {
+            "url": "http://localhost:18069/base_import_module/static/",
+            "path": "${workspaceFolder:odoo}/addons/base_import_module/static/"
+          },
+          {
+            "url": "http://localhost:18069/web_hierarchy/static/",
+            "path": "${workspaceFolder:odoo}/addons/web_hierarchy/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_timesheet_margin/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_timesheet_margin/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_project/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_project/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_adyen/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_adyen/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_zm_account/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_zm_account/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_it_edi_website_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_it_edi_website_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_in_gstin_status/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_in_gstin_status/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_sale_stock_wishlist/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_sale_stock_wishlist/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_pe_website_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_pe_website_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_purchase_stock/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_purchase_stock/static/"
+          },
+          {
+            "url": "http://localhost:18069/payment_aps/static/",
+            "path": "${workspaceFolder:odoo}/addons/payment_aps/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_sale_stock/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_sale_stock/static/"
+          },
+          {
+            "url": "http://localhost:18069/mass_mailing_crm/static/",
+            "path": "${workspaceFolder:odoo}/addons/mass_mailing_crm/static/"
+          },
+          {
+            "url": "http://localhost:18069/project_mrp_account/static/",
+            "path": "${workspaceFolder:odoo}/addons/project_mrp_account/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_viva_wallet/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_viva_wallet/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_uy/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_uy/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_se/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_se/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_it/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_it/static/"
+          },
+          {
+            "url": "http://localhost:18069/payment_asiapay/static/",
+            "path": "${workspaceFolder:odoo}/addons/payment_asiapay/static/"
+          },
+          {
+            "url": "http://localhost:18069/marketing_card/static/",
+            "path": "${workspaceFolder:odoo}/addons/marketing_card/static/"
+          },
+          {
+            "url": "http://localhost:18069/account_test/static/",
+            "path": "${workspaceFolder:odoo}/addons/account_test/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_sa_edi/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_sa_edi/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_cn/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_cn/static/"
+          },
+          {
+            "url": "http://localhost:18069/test_spreadsheet/static/",
+            "path": "${workspaceFolder:odoo}/addons/test_spreadsheet/static/"
+          },
+          {
+            "url": "http://localhost:18069/project_sale_expense/static/",
+            "path": "${workspaceFolder:odoo}/addons/project_sale_expense/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_sale_slides/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_sale_slides/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_crm_partner_assign/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_crm_partner_assign/static/"
+          },
+          {
+            "url": "http://localhost:18069/analytic/static/",
+            "path": "${workspaceFolder:odoo}/addons/analytic/static/"
+          },
+          {
+            "url": "http://localhost:18069/web_tour/static/",
+            "path": "${workspaceFolder:odoo}/addons/web_tour/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_event_jitsi/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_event_jitsi/static/"
+          },
+          {
+            "url": "http://localhost:18069/iap_crm/static/",
+            "path": "${workspaceFolder:odoo}/addons/iap_crm/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_event_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_event_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_loyalty/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_loyalty/static/"
+          },
+          {
+            "url": "http://localhost:18069/project_todo/static/",
+            "path": "${workspaceFolder:odoo}/addons/project_todo/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_stripe/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_stripe/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_iq/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_iq/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_attendance/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_attendance/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_sg/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_sg/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_tg/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_tg/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_gq/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_gq/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_event_track_quiz/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_event_track_quiz/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_account_tax_python/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_account_tax_python/static/"
+          },
+          {
+            "url": "http://localhost:18069/mrp_subcontracting_purchase/static/",
+            "path": "${workspaceFolder:odoo}/addons/mrp_subcontracting_purchase/static/"
+          },
+          {
+            "url": "http://localhost:18069/point_of_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/point_of_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_dz/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_dz/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_gcc_pos/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_gcc_pos/static/"
+          },
+          {
+            "url": "http://localhost:18069/spreadsheet_dashboard_pos_hr/static/",
+            "path": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_pos_hr/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_hourly_cost/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_hourly_cost/static/"
+          },
+          {
+            "url": "http://localhost:18069/account_qr_code_sepa/static/",
+            "path": "${workspaceFolder:odoo}/addons/account_qr_code_sepa/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_latam_invoice_document/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_latam_invoice_document/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_restaurant_stripe/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_restaurant_stripe/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_de/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_de/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_tn/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_tn/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_br/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_br/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_self_order/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_self_order/static/"
+          },
+          {
+            "url": "http://localhost:18069/barcodes/static/",
+            "path": "${workspaceFolder:odoo}/addons/barcodes/static/"
+          },
+          {
+            "url": "http://localhost:18069/base_geolocalize/static/",
+            "path": "${workspaceFolder:odoo}/addons/base_geolocalize/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_loyalty/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_loyalty/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ar_pos/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ar_pos/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_es/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_es/static/"
+          },
+          {
+            "url": "http://localhost:18069/payment_flutterwave/static/",
+            "path": "${workspaceFolder:odoo}/addons/payment_flutterwave/static/"
+          },
+          {
+            "url": "http://localhost:18069/crm_livechat/static/",
+            "path": "${workspaceFolder:odoo}/addons/crm_livechat/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_cm/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_cm/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_fr_facturx_chorus_pro/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_fr_facturx_chorus_pro/static/"
+          },
+          {
+            "url": "http://localhost:18069/board/static/",
+            "path": "${workspaceFolder:odoo}/addons/board/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_es_pos/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_es_pos/static/"
+          },
+          {
+            "url": "http://localhost:18069/http_routing/static/",
+            "path": "${workspaceFolder:odoo}/addons/http_routing/static/"
+          },
+          {
+            "url": "http://localhost:18069/mrp_subcontracting_repair/static/",
+            "path": "${workspaceFolder:odoo}/addons/mrp_subcontracting_repair/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_tw/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_tw/static/"
+          },
+          {
+            "url": "http://localhost:18069/mrp_subcontracting_account/static/",
+            "path": "${workspaceFolder:odoo}/addons/mrp_subcontracting_account/static/"
+          },
+          {
+            "url": "http://localhost:18069/spreadsheet_dashboard_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/project_purchase_stock/static/",
+            "path": "${workspaceFolder:odoo}/addons/project_purchase_stock/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_mrp/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_mrp/static/"
+          },
+          {
+            "url": "http://localhost:18069/mrp_subcontracting/static/",
+            "path": "${workspaceFolder:odoo}/addons/mrp_subcontracting/static/"
+          },
+          {
+            "url": "http://localhost:18069/payment_xendit/static/",
+            "path": "${workspaceFolder:odoo}/addons/payment_xendit/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_hr_kuna/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_hr_kuna/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_din5008_purchase/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_din5008_purchase/static/"
+          },
+          {
+            "url": "http://localhost:18069/test_sale_product_configurators/static/",
+            "path": "${workspaceFolder:odoo}/addons/test_sale_product_configurators/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_gr/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_gr/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_id/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_id/static/"
+          },
+          {
+            "url": "http://localhost:18069/mass_mailing_event/static/",
+            "path": "${workspaceFolder:odoo}/addons/mass_mailing_event/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_sms/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_sms/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_be/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_be/static/"
+          },
+          {
+            "url": "http://localhost:18069/stock_delivery/static/",
+            "path": "${workspaceFolder:odoo}/addons/stock_delivery/static/"
+          },
+          {
+            "url": "http://localhost:18069/payment_razorpay/static/",
+            "path": "${workspaceFolder:odoo}/addons/payment_razorpay/static/"
+          },
+          {
+            "url": "http://localhost:18069/auth_password_policy/static/",
+            "path": "${workspaceFolder:odoo}/addons/auth_password_policy/static/"
+          },
+          {
+            "url": "http://localhost:18069/project_hr_skills/static/",
+            "path": "${workspaceFolder:odoo}/addons/project_hr_skills/static/"
+          },
+          {
+            "url": "http://localhost:18069/auth_password_policy_signup/static/",
+            "path": "${workspaceFolder:odoo}/addons/auth_password_policy_signup/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_crm_livechat/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_crm_livechat/static/"
+          },
+          {
+            "url": "http://localhost:18069/utm/static/",
+            "path": "${workspaceFolder:odoo}/addons/utm/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_din5008/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_din5008/static/"
+          },
+          {
+            "url": "http://localhost:18069/mail_group/static/",
+            "path": "${workspaceFolder:odoo}/addons/mail_group/static/"
+          },
+          {
+            "url": "http://localhost:18069/project_stock_account/static/",
+            "path": "${workspaceFolder:odoo}/addons/project_stock_account/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_calendar/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_calendar/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_slides_survey/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_slides_survey/static/"
+          },
+          {
+            "url": "http://localhost:18069/spreadsheet_dashboard_website_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_website_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/spreadsheet_dashboard_event_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_event_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_hu_edi/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_hu_edi/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_us_account/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_us_account/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_mc/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_mc/static/"
+          },
+          {
+            "url": "http://localhost:18069/purchase_product_matrix/static/",
+            "path": "${workspaceFolder:odoo}/addons/purchase_product_matrix/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_do/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_do/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_event_exhibitor/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_event_exhibitor/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_tz_account/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_tz_account/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_vn_edi_viettel/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_vn_edi_viettel/static/"
+          },
+          {
+            "url": "http://localhost:18069/event_product/static/",
+            "path": "${workspaceFolder:odoo}/addons/event_product/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_my_edi/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_my_edi/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_fleet/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_fleet/static/"
+          },
+          {
+            "url": "http://localhost:18069/snailmail_account/static/",
+            "path": "${workspaceFolder:odoo}/addons/snailmail_account/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_in/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_in/static/"
+          },
+          {
+            "url": "http://localhost:18069/purchase_requisition/static/",
+            "path": "${workspaceFolder:odoo}/addons/purchase_requisition/static/"
+          },
+          {
+            "url": "http://localhost:18069/auth_oauth/static/",
+            "path": "${workspaceFolder:odoo}/addons/auth_oauth/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_th/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_th/static/"
+          },
+          {
+            "url": "http://localhost:18069/test_html_field_history/static/",
+            "path": "${workspaceFolder:odoo}/addons/test_html_field_history/static/"
+          },
+          {
+            "url": "http://localhost:18069/mrp_account/static/",
+            "path": "${workspaceFolder:odoo}/addons/mrp_account/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_restaurant_loyalty/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_restaurant_loyalty/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_pk/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_pk/static/"
+          },
+          {
+            "url": "http://localhost:18069/html_editor/static/",
+            "path": "${workspaceFolder:odoo}/addons/html_editor/static/"
+          },
+          {
+            "url": "http://localhost:18069/project/static/",
+            "path": "${workspaceFolder:odoo}/addons/project/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_hr/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_hr/static/"
+          },
+          {
+            "url": "http://localhost:18069/spreadsheet_dashboard_hr_expense/static/",
+            "path": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_hr_expense/static/"
+          },
+          {
+            "url": "http://localhost:18069/stock_fleet/static/",
+            "path": "${workspaceFolder:odoo}/addons/stock_fleet/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_rw/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_rw/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_gcc_invoice_stock_account/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_gcc_invoice_stock_account/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ua/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ua/static/"
+          },
+          {
+            "url": "http://localhost:18069/mass_mailing_crm_sms/static/",
+            "path": "${workspaceFolder:odoo}/addons/mass_mailing_crm_sms/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_payment/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_payment/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_id_pos/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_id_pos/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_in_stock/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_in_stock/static/"
+          },
+          {
+            "url": "http://localhost:18069/base_address_extended/static/",
+            "path": "${workspaceFolder:odoo}/addons/base_address_extended/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_async_emails/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_async_emails/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_sale_comparison_wishlist/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_sale_comparison_wishlist/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_event_booth_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_event_booth_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_qa/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_qa/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_be_pos_restaurant/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_be_pos_restaurant/static/"
+          },
+          {
+            "url": "http://localhost:18069/mass_mailing_event_track_sms/static/",
+            "path": "${workspaceFolder:odoo}/addons/mass_mailing_event_track_sms/static/"
+          },
+          {
+            "url": "http://localhost:18069/event_crm/static/",
+            "path": "${workspaceFolder:odoo}/addons/event_crm/static/"
+          },
+          {
+            "url": "http://localhost:18069/project_timesheet_holidays/static/",
+            "path": "${workspaceFolder:odoo}/addons/project_timesheet_holidays/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_dk_oioubl/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_dk_oioubl/static/"
+          },
+          {
+            "url": "http://localhost:18069/hw_posbox_homepage/static/",
+            "path": "${workspaceFolder:odoo}/addons/hw_posbox_homepage/static/"
+          },
+          {
+            "url": "http://localhost:18069/web_unsplash/static/",
+            "path": "${workspaceFolder:odoo}/addons/web_unsplash/static/"
+          },
+          {
+            "url": "http://localhost:18069/project_sms/static/",
+            "path": "${workspaceFolder:odoo}/addons/project_sms/static/"
+          },
+          {
+            "url": "http://localhost:18069/project_mrp/static/",
+            "path": "${workspaceFolder:odoo}/addons/project_mrp/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ae/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ae/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_fr_account/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_fr_account/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_mt_pos/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_mt_pos/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ro_edi_stock/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ro_edi_stock/static/"
+          },
+          {
+            "url": "http://localhost:18069/iap_mail/static/",
+            "path": "${workspaceFolder:odoo}/addons/iap_mail/static/"
+          },
+          {
+            "url": "http://localhost:18069/spreadsheet_dashboard_im_livechat/static/",
+            "path": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_im_livechat/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_timesheet_attendance/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_timesheet_attendance/static/"
+          },
+          {
+            "url": "http://localhost:18069/cloud_storage/static/",
+            "path": "${workspaceFolder:odoo}/addons/cloud_storage/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_sale_mondialrelay/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_sale_mondialrelay/static/"
+          },
+          {
+            "url": "http://localhost:18069/base_iban/static/",
+            "path": "${workspaceFolder:odoo}/addons/base_iban/static/"
+          },
+          {
+            "url": "http://localhost:18069/maintenance/static/",
+            "path": "${workspaceFolder:odoo}/addons/maintenance/static/"
+          },
+          {
+            "url": "http://localhost:18069/purchase_stock/static/",
+            "path": "${workspaceFolder:odoo}/addons/purchase_stock/static/"
+          },
+          {
+            "url": "http://localhost:18069/calendar_sms/static/",
+            "path": "${workspaceFolder:odoo}/addons/calendar_sms/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_holidays_attendance/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_holidays_attendance/static/"
+          },
+          {
+            "url": "http://localhost:18069/payment/static/",
+            "path": "${workspaceFolder:odoo}/addons/payment/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_hk/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_hk/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_work_entry_holidays/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_work_entry_holidays/static/"
+          },
+          {
+            "url": "http://localhost:18069/payment_mercado_pago/static/",
+            "path": "${workspaceFolder:odoo}/addons/payment_mercado_pago/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_management/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_management/static/"
+          },
+          {
+            "url": "http://localhost:18069/spreadsheet/static/",
+            "path": "${workspaceFolder:odoo}/addons/spreadsheet/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_fi_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_fi_sale/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_mx_hr/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_mx_hr/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_es_edi_tbai/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_es_edi_tbai/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ne/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ne/static/"
+          },
+          {
+            "url": "http://localhost:18069/spreadsheet_dashboard/static/",
+            "path": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_work_entry/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_work_entry/static/"
+          },
+          {
+            "url": "http://localhost:18069/mail_bot/static/",
+            "path": "${workspaceFolder:odoo}/addons/mail_bot/static/"
+          },
+          {
+            "url": "http://localhost:18069/product_email_template/static/",
+            "path": "${workspaceFolder:odoo}/addons/product_email_template/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_skills/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_skills/static/"
+          },
+          {
+            "url": "http://localhost:18069/theme_default/static/",
+            "path": "${workspaceFolder:odoo}/addons/theme_default/static/"
+          },
+          {
+            "url": "http://localhost:18069/google_gmail/static/",
+            "path": "${workspaceFolder:odoo}/addons/google_gmail/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_project_stock_account/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_project_stock_account/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ma/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ma/static/"
+          },
+          {
+            "url": "http://localhost:18069/loyalty/static/",
+            "path": "${workspaceFolder:odoo}/addons/loyalty/static/"
+          },
+          {
+            "url": "http://localhost:18069/mass_mailing_sms/static/",
+            "path": "${workspaceFolder:odoo}/addons/mass_mailing_sms/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_event_track_live_quiz/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_event_track_live_quiz/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ar/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ar/static/"
+          },
+          {
+            "url": "http://localhost:18069/microsoft_outlook/static/",
+            "path": "${workspaceFolder:odoo}/addons/microsoft_outlook/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_hn/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_hn/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_sale_margin/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_sale_margin/static/"
+          },
+          {
+            "url": "http://localhost:18069/product_margin/static/",
+            "path": "${workspaceFolder:odoo}/addons/product_margin/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_au/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_au/static/"
+          },
+          {
+            "url": "http://localhost:18069/payment_paypal/static/",
+            "path": "${workspaceFolder:odoo}/addons/payment_paypal/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_in_pos/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_in_pos/static/"
+          },
+          {
+            "url": "http://localhost:18069/fleet/static/",
+            "path": "${workspaceFolder:odoo}/addons/fleet/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_pe_pos/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_pe_pos/static/"
+          },
+          {
+            "url": "http://localhost:18069/gamification/static/",
+            "path": "${workspaceFolder:odoo}/addons/gamification/static/"
+          },
+          {
+            "url": "http://localhost:18069/account_payment/static/",
+            "path": "${workspaceFolder:odoo}/addons/account_payment/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_restaurant/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_restaurant/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_za/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_za/static/"
+          },
+          {
+            "url": "http://localhost:18069/delivery_stock_picking_batch/static/",
+            "path": "${workspaceFolder:odoo}/addons/delivery_stock_picking_batch/static/"
+          },
+          {
+            "url": "http://localhost:18069/mail_plugin/static/",
+            "path": "${workspaceFolder:odoo}/addons/mail_plugin/static/"
+          },
+          {
+            "url": "http://localhost:18069/bus/static/",
+            "path": "${workspaceFolder:odoo}/addons/bus/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_slides_forum/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_slides_forum/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_event_booth/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_event_booth/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_cg/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_cg/static/"
+          },
+          {
+            "url": "http://localhost:18069/spreadsheet_dashboard_website_sale_slides/static/",
+            "path": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_website_sale_slides/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_self_order_epson_printer/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_self_order_epson_printer/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_co_pos/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_co_pos/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_gelato_stock/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_gelato_stock/static/"
+          },
+          {
+            "url": "http://localhost:18069/auth_password_policy_portal/static/",
+            "path": "${workspaceFolder:odoo}/addons/auth_password_policy_portal/static/"
+          },
+          {
+            "url": "http://localhost:18069/hr_presence/static/",
+            "path": "${workspaceFolder:odoo}/addons/hr_presence/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_fr_pos_cert/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_fr_pos_cert/static/"
+          },
+          {
+            "url": "http://localhost:18069/stock_sms/static/",
+            "path": "${workspaceFolder:odoo}/addons/stock_sms/static/"
+          },
+          {
+            "url": "http://localhost:18069/base_automation/static/",
+            "path": "${workspaceFolder:odoo}/addons/base_automation/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_forum/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_forum/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_co/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_co/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_lb_account/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_lb_account/static/"
+          },
+          {
+            "url": "http://localhost:18069/test_mail_sms/static/",
+            "path": "${workspaceFolder:odoo}/addons/test_mail_sms/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_bj/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_bj/static/"
+          },
+          {
+            "url": "http://localhost:18069/event/static/",
+            "path": "${workspaceFolder:odoo}/addons/event/static/"
+          },
+          {
+            "url": "http://localhost:18069/mail/static/",
+            "path": "${workspaceFolder:odoo}/addons/mail/static/"
+          },
+          {
+            "url": "http://localhost:18069/mrp_landed_costs/static/",
+            "path": "${workspaceFolder:odoo}/addons/mrp_landed_costs/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_ch/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_ch/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_no/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_no/static/"
+          },
+          {
+            "url": "http://localhost:18069/onboarding/static/",
+            "path": "${workspaceFolder:odoo}/addons/onboarding/static/"
+          },
+          {
+            "url": "http://localhost:18069/event_sms/static/",
+            "path": "${workspaceFolder:odoo}/addons/event_sms/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_slides/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_slides/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_sms/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_sms/static/"
+          },
+          {
+            "url": "http://localhost:18069/website_mail_group/static/",
+            "path": "${workspaceFolder:odoo}/addons/website_mail_group/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_crm/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_crm/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_mz/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_mz/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_kr/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_kr/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_self_order_adyen/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_self_order_adyen/static/"
+          },
+          {
+            "url": "http://localhost:18069/sale_stock_margin/static/",
+            "path": "${workspaceFolder:odoo}/addons/sale_stock_margin/static/"
+          },
+          {
+            "url": "http://localhost:18069/pos_mercado_pago/static/",
+            "path": "${workspaceFolder:odoo}/addons/pos_mercado_pago/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_nz/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_nz/static/"
+          },
+          {
+            "url": "http://localhost:18069/payment_adyen/static/",
+            "path": "${workspaceFolder:odoo}/addons/payment_adyen/static/"
+          },
+          {
+            "url": "http://localhost:18069/test_website_slides_full/static/",
+            "path": "${workspaceFolder:odoo}/addons/test_website_slides_full/static/"
+          },
+          {
+            "url": "http://localhost:18069/payment_razorpay_oauth/static/",
+            "path": "${workspaceFolder:odoo}/addons/payment_razorpay_oauth/static/"
+          },
+          {
+            "url": "http://localhost:18069/l10n_din5008_sale/static/",
+            "path": "${workspaceFolder:odoo}/addons/l10n_din5008_sale/static/"
+          }
+        ]
+      },
+      {
+        "type": "chrome",
+        "request": "launch",
+        "name": "Connect to chrome debugger",
+        "url": "http://localhost:18069/?debug=assets",
+        "skipFiles": [
+          "**/lib/**"
+        ],
+        "trace": true,
+        "pathMapping": {
+          "http://localhost:18069/spreadsheet_dashboard_hr_timesheet/static/": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_hr_timesheet/static/",
+          "http://localhost:18069/account_peppol/static/": "${workspaceFolder:odoo}/addons/account_peppol/static/",
+          "http://localhost:18069/website_sale_wishlist/static/": "${workspaceFolder:odoo}/addons/website_sale_wishlist/static/",
+          "http://localhost:18069/l10n_es_edi_tbai_pos/static/": "${workspaceFolder:odoo}/addons/l10n_es_edi_tbai_pos/static/",
+          "http://localhost:18069/sale_pdf_quote_builder/static/": "${workspaceFolder:odoo}/addons/sale_pdf_quote_builder/static/",
+          "http://localhost:18069/portal/static/": "${workspaceFolder:odoo}/addons/portal/static/",
+          "http://localhost:18069/l10n_in_ewaybill_stock/static/": "${workspaceFolder:odoo}/addons/l10n_in_ewaybill_stock/static/",
+          "http://localhost:18069/website_blog/static/": "${workspaceFolder:odoo}/addons/website_blog/static/",
+          "http://localhost:18069/l10n_in_hr_holidays/static/": "${workspaceFolder:odoo}/addons/l10n_in_hr_holidays/static/",
+          "http://localhost:18069/l10n_ci/static/": "${workspaceFolder:odoo}/addons/l10n_ci/static/",
+          "http://localhost:18069/mass_mailing_event_track/static/": "${workspaceFolder:odoo}/addons/mass_mailing_event_track/static/",
+          "http://localhost:18069/l10n_hu/static/": "${workspaceFolder:odoo}/addons/l10n_hu/static/",
+          "http://localhost:18069/sale_project_stock/static/": "${workspaceFolder:odoo}/addons/sale_project_stock/static/",
+          "http://localhost:18069/hr_holidays/static/": "${workspaceFolder:odoo}/addons/hr_holidays/static/",
+          "http://localhost:18069/purchase/static/": "${workspaceFolder:odoo}/addons/purchase/static/",
+          "http://localhost:18069/hr_holidays_contract/static/": "${workspaceFolder:odoo}/addons/hr_holidays_contract/static/",
+          "http://localhost:18069/l10n_be_pos_sale/static/": "${workspaceFolder:odoo}/addons/l10n_be_pos_sale/static/",
+          "http://localhost:18069/website_membership/static/": "${workspaceFolder:odoo}/addons/website_membership/static/",
+          "http://localhost:18069/l10n_fr/static/": "${workspaceFolder:odoo}/addons/l10n_fr/static/",
+          "http://localhost:18069/l10n_km/static/": "${workspaceFolder:odoo}/addons/l10n_km/static/",
+          "http://localhost:18069/sale/static/": "${workspaceFolder:odoo}/addons/sale/static/",
+          "http://localhost:18069/l10n_jp/static/": "${workspaceFolder:odoo}/addons/l10n_jp/static/",
+          "http://localhost:18069/iap/static/": "${workspaceFolder:odoo}/addons/iap/static/",
+          "http://localhost:18069/lunch/static/": "${workspaceFolder:odoo}/addons/lunch/static/",
+          "http://localhost:18069/spreadsheet_dashboard_stock_account/static/": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_stock_account/static/",
+          "http://localhost:18069/l10n_dk/static/": "${workspaceFolder:odoo}/addons/l10n_dk/static/",
+          "http://localhost:18069/hr_expense/static/": "${workspaceFolder:odoo}/addons/hr_expense/static/",
+          "http://localhost:18069/pos_self_order_stripe/static/": "${workspaceFolder:odoo}/addons/pos_self_order_stripe/static/",
+          "http://localhost:18069/l10n_sn/static/": "${workspaceFolder:odoo}/addons/l10n_sn/static/",
+          "http://localhost:18069/project_mrp_sale/static/": "${workspaceFolder:odoo}/addons/project_mrp_sale/static/",
+          "http://localhost:18069/pos_online_payment/static/": "${workspaceFolder:odoo}/addons/pos_online_payment/static/",
+          "http://localhost:18069/sale_purchase/static/": "${workspaceFolder:odoo}/addons/sale_purchase/static/",
+          "http://localhost:18069/l10n_gcc_invoice/static/": "${workspaceFolder:odoo}/addons/l10n_gcc_invoice/static/",
+          "http://localhost:18069/survey/static/": "${workspaceFolder:odoo}/addons/survey/static/",
+          "http://localhost:18069/l10n_ro_edi/static/": "${workspaceFolder:odoo}/addons/l10n_ro_edi/static/",
+          "http://localhost:18069/l10n_td/static/": "${workspaceFolder:odoo}/addons/l10n_td/static/",
+          "http://localhost:18069/account_edi_proxy_client/static/": "${workspaceFolder:odoo}/addons/account_edi_proxy_client/static/",
+          "http://localhost:18069/l10n_it_edi_sale/static/": "${workspaceFolder:odoo}/addons/l10n_it_edi_sale/static/",
+          "http://localhost:18069/test_import_export/static/": "${workspaceFolder:odoo}/addons/test_import_export/static/",
+          "http://localhost:18069/test_mass_mailing/static/": "${workspaceFolder:odoo}/addons/test_mass_mailing/static/",
+          "http://localhost:18069/mrp_repair/static/": "${workspaceFolder:odoo}/addons/mrp_repair/static/",
+          "http://localhost:18069/l10n_bo/static/": "${workspaceFolder:odoo}/addons/l10n_bo/static/",
+          "http://localhost:18069/payment_worldline/static/": "${workspaceFolder:odoo}/addons/payment_worldline/static/",
+          "http://localhost:18069/pos_online_payment_self_order/static/": "${workspaceFolder:odoo}/addons/pos_online_payment_self_order/static/",
+          "http://localhost:18069/website_sale_autocomplete/static/": "${workspaceFolder:odoo}/addons/website_sale_autocomplete/static/",
+          "http://localhost:18069/account_tax_python/static/": "${workspaceFolder:odoo}/addons/account_tax_python/static/",
+          "http://localhost:18069/hr_gamification/static/": "${workspaceFolder:odoo}/addons/hr_gamification/static/",
+          "http://localhost:18069/pos_six/static/": "${workspaceFolder:odoo}/addons/pos_six/static/",
+          "http://localhost:18069/l10n_id_efaktur/static/": "${workspaceFolder:odoo}/addons/l10n_id_efaktur/static/",
+          "http://localhost:18069/sale_margin/static/": "${workspaceFolder:odoo}/addons/sale_margin/static/",
+          "http://localhost:18069/l10n_tr/static/": "${workspaceFolder:odoo}/addons/l10n_tr/static/",
+          "http://localhost:18069/l10n_account_edi_ubl_cii_tests/static/": "${workspaceFolder:odoo}/addons/l10n_account_edi_ubl_cii_tests/static/",
+          "http://localhost:18069/l10n_cr/static/": "${workspaceFolder:odoo}/addons/l10n_cr/static/",
+          "http://localhost:18069/website_customer/static/": "${workspaceFolder:odoo}/addons/website_customer/static/",
+          "http://localhost:18069/base_install_request/static/": "${workspaceFolder:odoo}/addons/base_install_request/static/",
+          "http://localhost:18069/mass_mailing/static/": "${workspaceFolder:odoo}/addons/mass_mailing/static/",
+          "http://localhost:18069/account_fleet/static/": "${workspaceFolder:odoo}/addons/account_fleet/static/",
+          "http://localhost:18069/event_booth_sale/static/": "${workspaceFolder:odoo}/addons/event_booth_sale/static/",
+          "http://localhost:18069/sale_service/static/": "${workspaceFolder:odoo}/addons/sale_service/static/",
+          "http://localhost:18069/l10n_latam_base/static/": "${workspaceFolder:odoo}/addons/l10n_latam_base/static/",
+          "http://localhost:18069/crm_iap_enrich/static/": "${workspaceFolder:odoo}/addons/crm_iap_enrich/static/",
+          "http://localhost:18069/l10n_gt/static/": "${workspaceFolder:odoo}/addons/l10n_gt/static/",
+          "http://localhost:18069/l10n_gw/static/": "${workspaceFolder:odoo}/addons/l10n_gw/static/",
+          "http://localhost:18069/l10n_in_sale/static/": "${workspaceFolder:odoo}/addons/l10n_in_sale/static/",
+          "http://localhost:18069/l10n_gn/static/": "${workspaceFolder:odoo}/addons/l10n_gn/static/",
+          "http://localhost:18069/account_edi/static/": "${workspaceFolder:odoo}/addons/account_edi/static/",
+          "http://localhost:18069/l10n_sk/static/": "${workspaceFolder:odoo}/addons/l10n_sk/static/",
+          "http://localhost:18069/pos_razorpay/static/": "${workspaceFolder:odoo}/addons/pos_razorpay/static/",
+          "http://localhost:18069/project_stock/static/": "${workspaceFolder:odoo}/addons/project_stock/static/",
+          "http://localhost:18069/hr_homeworking/static/": "${workspaceFolder:odoo}/addons/hr_homeworking/static/",
+          "http://localhost:18069/l10n_jo/static/": "${workspaceFolder:odoo}/addons/l10n_jo/static/",
+          "http://localhost:18069/digest/static/": "${workspaceFolder:odoo}/addons/digest/static/",
+          "http://localhost:18069/snailmail/static/": "${workspaceFolder:odoo}/addons/snailmail/static/",
+          "http://localhost:18069/hr_maintenance/static/": "${workspaceFolder:odoo}/addons/hr_maintenance/static/",
+          "http://localhost:18069/mrp_subcontracting_dropshipping/static/": "${workspaceFolder:odoo}/addons/mrp_subcontracting_dropshipping/static/",
+          "http://localhost:18069/web_editor/static/": "${workspaceFolder:odoo}/addons/web_editor/static/",
+          "http://localhost:18069/spreadsheet_dashboard_sale_timesheet/static/": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_sale_timesheet/static/",
+          "http://localhost:18069/website_event_booth_exhibitor/static/": "${workspaceFolder:odoo}/addons/website_event_booth_exhibitor/static/",
+          "http://localhost:18069/account/static/": "${workspaceFolder:odoo}/addons/account/static/",
+          "http://localhost:18069/uom/static/": "${workspaceFolder:odoo}/addons/uom/static/",
+          "http://localhost:18069/l10n_tr_nilvera/static/": "${workspaceFolder:odoo}/addons/l10n_tr_nilvera/static/",
+          "http://localhost:18069/sale_mrp_margin/static/": "${workspaceFolder:odoo}/addons/sale_mrp_margin/static/",
+          "http://localhost:18069/spreadsheet_dashboard_pos_restaurant/static/": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_pos_restaurant/static/",
+          "http://localhost:18069/website_crm/static/": "${workspaceFolder:odoo}/addons/website_crm/static/",
+          "http://localhost:18069/gamification_sale_crm/static/": "${workspaceFolder:odoo}/addons/gamification_sale_crm/static/",
+          "http://localhost:18069/l10n_eg/static/": "${workspaceFolder:odoo}/addons/l10n_eg/static/",
+          "http://localhost:18069/website_project/static/": "${workspaceFolder:odoo}/addons/website_project/static/",
+          "http://localhost:18069/l10n_kz/static/": "${workspaceFolder:odoo}/addons/l10n_kz/static/",
+          "http://localhost:18069/sales_team/static/": "${workspaceFolder:odoo}/addons/sales_team/static/",
+          "http://localhost:18069/pos_sale_loyalty/static/": "${workspaceFolder:odoo}/addons/pos_sale_loyalty/static/",
+          "http://localhost:18069/barcodes_gs1_nomenclature/static/": "${workspaceFolder:odoo}/addons/barcodes_gs1_nomenclature/static/",
+          "http://localhost:18069/l10n_my_ubl_pint/static/": "${workspaceFolder:odoo}/addons/l10n_my_ubl_pint/static/",
+          "http://localhost:18069/l10n_pt/static/": "${workspaceFolder:odoo}/addons/l10n_pt/static/",
+          "http://localhost:18069/website_sale_collect/static/": "${workspaceFolder:odoo}/addons/website_sale_collect/static/",
+          "http://localhost:18069/l10n_ca/static/": "${workspaceFolder:odoo}/addons/l10n_ca/static/",
+          "http://localhost:18069/calendar/static/": "${workspaceFolder:odoo}/addons/calendar/static/",
+          "http://localhost:18069/payment_stripe/static/": "${workspaceFolder:odoo}/addons/payment_stripe/static/",
+          "http://localhost:18069/website_event/static/": "${workspaceFolder:odoo}/addons/website_event/static/",
+          "http://localhost:18069/pos_restaurant_adyen/static/": "${workspaceFolder:odoo}/addons/pos_restaurant_adyen/static/",
+          "http://localhost:18069/l10n_sa_edi_pos/static/": "${workspaceFolder:odoo}/addons/l10n_sa_edi_pos/static/",
+          "http://localhost:18069/l10n_bd/static/": "${workspaceFolder:odoo}/addons/l10n_bd/static/",
+          "http://localhost:18069/l10n_at/static/": "${workspaceFolder:odoo}/addons/l10n_at/static/",
+          "http://localhost:18069/test_resource/static/": "${workspaceFolder:odoo}/addons/test_resource/static/",
+          "http://localhost:18069/l10n_it_stock_ddt/static/": "${workspaceFolder:odoo}/addons/l10n_it_stock_ddt/static/",
+          "http://localhost:18069/payment_demo/static/": "${workspaceFolder:odoo}/addons/payment_demo/static/",
+          "http://localhost:18069/hr_work_entry_contract/static/": "${workspaceFolder:odoo}/addons/hr_work_entry_contract/static/",
+          "http://localhost:18069/sale_expense/static/": "${workspaceFolder:odoo}/addons/sale_expense/static/",
+          "http://localhost:18069/repair/static/": "${workspaceFolder:odoo}/addons/repair/static/",
+          "http://localhost:18069/l10n_br_sales/static/": "${workspaceFolder:odoo}/addons/l10n_br_sales/static/",
+          "http://localhost:18069/l10n_in_withholding_payment/static/": "${workspaceFolder:odoo}/addons/l10n_in_withholding_payment/static/",
+          "http://localhost:18069/website_profile/static/": "${workspaceFolder:odoo}/addons/website_profile/static/",
+          "http://localhost:18069/certificate/static/": "${workspaceFolder:odoo}/addons/certificate/static/",
+          "http://localhost:18069/website_mass_mailing/static/": "${workspaceFolder:odoo}/addons/website_mass_mailing/static/",
+          "http://localhost:18069/hr_org_chart/static/": "${workspaceFolder:odoo}/addons/hr_org_chart/static/",
+          "http://localhost:18069/hr_contract/static/": "${workspaceFolder:odoo}/addons/hr_contract/static/",
+          "http://localhost:18069/l10n_cy/static/": "${workspaceFolder:odoo}/addons/l10n_cy/static/",
+          "http://localhost:18069/sale_loyalty_delivery/static/": "${workspaceFolder:odoo}/addons/sale_loyalty_delivery/static/",
+          "http://localhost:18069/sms/static/": "${workspaceFolder:odoo}/addons/sms/static/",
+          "http://localhost:18069/sale_expense_margin/static/": "${workspaceFolder:odoo}/addons/sale_expense_margin/static/",
+          "http://localhost:18069/crm_sms/static/": "${workspaceFolder:odoo}/addons/crm_sms/static/",
+          "http://localhost:18069/purchase_requisition_stock/static/": "${workspaceFolder:odoo}/addons/purchase_requisition_stock/static/",
+          "http://localhost:18069/test_website_modules/static/": "${workspaceFolder:odoo}/addons/test_website_modules/static/",
+          "http://localhost:18069/auth_passkey/static/": "${workspaceFolder:odoo}/addons/auth_passkey/static/",
+          "http://localhost:18069/l10n_ga/static/": "${workspaceFolder:odoo}/addons/l10n_ga/static/",
+          "http://localhost:18069/base_setup/static/": "${workspaceFolder:odoo}/addons/base_setup/static/",
+          "http://localhost:18069/portal_rating/static/": "${workspaceFolder:odoo}/addons/portal_rating/static/",
+          "http://localhost:18069/l10n_din5008_stock/static/": "${workspaceFolder:odoo}/addons/l10n_din5008_stock/static/",
+          "http://localhost:18069/sale_mrp/static/": "${workspaceFolder:odoo}/addons/sale_mrp/static/",
+          "http://localhost:18069/hr_recruitment/static/": "${workspaceFolder:odoo}/addons/hr_recruitment/static/",
+          "http://localhost:18069/test_crm_full/static/": "${workspaceFolder:odoo}/addons/test_crm_full/static/",
+          "http://localhost:18069/account_check_printing/static/": "${workspaceFolder:odoo}/addons/account_check_printing/static/",
+          "http://localhost:18069/data_recycle/static/": "${workspaceFolder:odoo}/addons/data_recycle/static/",
+          "http://localhost:18069/hw_drivers/static/": "${workspaceFolder:odoo}/addons/hw_drivers/static/",
+          "http://localhost:18069/l10n_lv/static/": "${workspaceFolder:odoo}/addons/l10n_lv/static/",
+          "http://localhost:18069/pos_epson_printer/static/": "${workspaceFolder:odoo}/addons/pos_epson_printer/static/",
+          "http://localhost:18069/l10n_il/static/": "${workspaceFolder:odoo}/addons/l10n_il/static/",
+          "http://localhost:18069/test_website/static/": "${workspaceFolder:odoo}/addons/test_website/static/",
+          "http://localhost:18069/l10n_syscohada/static/": "${workspaceFolder:odoo}/addons/l10n_syscohada/static/",
+          "http://localhost:18069/account_update_tax_tags/static/": "${workspaceFolder:odoo}/addons/account_update_tax_tags/static/",
+          "http://localhost:18069/l10n_es_edi_sii/static/": "${workspaceFolder:odoo}/addons/l10n_es_edi_sii/static/",
+          "http://localhost:18069/l10n_ee/static/": "${workspaceFolder:odoo}/addons/l10n_ee/static/",
+          "http://localhost:18069/project_mail_plugin/static/": "${workspaceFolder:odoo}/addons/project_mail_plugin/static/",
+          "http://localhost:18069/hr_recruitment_skills/static/": "${workspaceFolder:odoo}/addons/hr_recruitment_skills/static/",
+          "http://localhost:18069/stock_landed_costs/static/": "${workspaceFolder:odoo}/addons/stock_landed_costs/static/",
+          "http://localhost:18069/l10n_pa/static/": "${workspaceFolder:odoo}/addons/l10n_pa/static/",
+          "http://localhost:18069/l10n_cz/static/": "${workspaceFolder:odoo}/addons/l10n_cz/static/",
+          "http://localhost:18069/attachment_indexation/static/": "${workspaceFolder:odoo}/addons/attachment_indexation/static/",
+          "http://localhost:18069/l10n_test_pos_qr_payment/static/": "${workspaceFolder:odoo}/addons/l10n_test_pos_qr_payment/static/",
+          "http://localhost:18069/l10n_in_purchase/static/": "${workspaceFolder:odoo}/addons/l10n_in_purchase/static/",
+          "http://localhost:18069/l10n_sg_ubl_pint/static/": "${workspaceFolder:odoo}/addons/l10n_sg_ubl_pint/static/",
+          "http://localhost:18069/l10n_vn/static/": "${workspaceFolder:odoo}/addons/l10n_vn/static/",
+          "http://localhost:18069/test_sale_purchase_edi_ubl/static/": "${workspaceFolder:odoo}/addons/test_sale_purchase_edi_ubl/static/",
+          "http://localhost:18069/l10n_din5008_repair/static/": "${workspaceFolder:odoo}/addons/l10n_din5008_repair/static/",
+          "http://localhost:18069/pos_discount/static/": "${workspaceFolder:odoo}/addons/pos_discount/static/",
+          "http://localhost:18069/payment_custom/static/": "${workspaceFolder:odoo}/addons/payment_custom/static/",
+          "http://localhost:18069/l10n_mu_account/static/": "${workspaceFolder:odoo}/addons/l10n_mu_account/static/",
+          "http://localhost:18069/mass_mailing_event_sms/static/": "${workspaceFolder:odoo}/addons/mass_mailing_event_sms/static/",
+          "http://localhost:18069/crm/static/": "${workspaceFolder:odoo}/addons/crm/static/",
+          "http://localhost:18069/l10n_my_edi_extended/static/": "${workspaceFolder:odoo}/addons/l10n_my_edi_extended/static/",
+          "http://localhost:18069/website_livechat/static/": "${workspaceFolder:odoo}/addons/website_livechat/static/",
+          "http://localhost:18069/website_mail/static/": "${workspaceFolder:odoo}/addons/website_mail/static/",
+          "http://localhost:18069/contacts/static/": "${workspaceFolder:odoo}/addons/contacts/static/",
+          "http://localhost:18069/l10n_ph/static/": "${workspaceFolder:odoo}/addons/l10n_ph/static/",
+          "http://localhost:18069/stock_picking_batch/static/": "${workspaceFolder:odoo}/addons/stock_picking_batch/static/",
+          "http://localhost:18069/event_booth/static/": "${workspaceFolder:odoo}/addons/event_booth/static/",
+          "http://localhost:18069/account_debit_note/static/": "${workspaceFolder:odoo}/addons/account_debit_note/static/",
+          "http://localhost:18069/membership/static/": "${workspaceFolder:odoo}/addons/membership/static/",
+          "http://localhost:18069/website_sale_comparison/static/": "${workspaceFolder:odoo}/addons/website_sale_comparison/static/",
+          "http://localhost:18069/test_hr_contract_calendar/static/": "${workspaceFolder:odoo}/addons/test_hr_contract_calendar/static/",
+          "http://localhost:18069/auth_totp_mail_enforce/static/": "${workspaceFolder:odoo}/addons/auth_totp_mail_enforce/static/",
+          "http://localhost:18069/l10n_es_modelo130/static/": "${workspaceFolder:odoo}/addons/l10n_es_modelo130/static/",
+          "http://localhost:18069/l10n_eg_edi_eta/static/": "${workspaceFolder:odoo}/addons/l10n_eg_edi_eta/static/",
+          "http://localhost:18069/l10n_lu/static/": "${workspaceFolder:odoo}/addons/l10n_lu/static/",
+          "http://localhost:18069/l10n_bg/static/": "${workspaceFolder:odoo}/addons/l10n_bg/static/",
+          "http://localhost:18069/im_livechat/static/": "${workspaceFolder:odoo}/addons/im_livechat/static/",
+          "http://localhost:18069/l10n_mn/static/": "${workspaceFolder:odoo}/addons/l10n_mn/static/",
+          "http://localhost:18069/google_recaptcha/static/": "${workspaceFolder:odoo}/addons/google_recaptcha/static/",
+          "http://localhost:18069/l10n_nl/static/": "${workspaceFolder:odoo}/addons/l10n_nl/static/",
+          "http://localhost:18069/l10n_si/static/": "${workspaceFolder:odoo}/addons/l10n_si/static/",
+          "http://localhost:18069/website/static/": "${workspaceFolder:odoo}/addons/website/static/",
+          "http://localhost:18069/purchase_repair/static/": "${workspaceFolder:odoo}/addons/purchase_repair/static/",
+          "http://localhost:18069/website_hr_recruitment/static/": "${workspaceFolder:odoo}/addons/website_hr_recruitment/static/",
+          "http://localhost:18069/crm_mail_plugin/static/": "${workspaceFolder:odoo}/addons/crm_mail_plugin/static/",
+          "http://localhost:18069/mass_mailing_slides/static/": "${workspaceFolder:odoo}/addons/mass_mailing_slides/static/",
+          "http://localhost:18069/account_qr_code_emv/static/": "${workspaceFolder:odoo}/addons/account_qr_code_emv/static/",
+          "http://localhost:18069/l10n_pl/static/": "${workspaceFolder:odoo}/addons/l10n_pl/static/",
+          "http://localhost:18069/l10n_it_edi/static/": "${workspaceFolder:odoo}/addons/l10n_it_edi/static/",
+          "http://localhost:18069/pos_paytm/static/": "${workspaceFolder:odoo}/addons/pos_paytm/static/",
+          "http://localhost:18069/website_crm_sms/static/": "${workspaceFolder:odoo}/addons/website_crm_sms/static/",
+          "http://localhost:18069/google_calendar/static/": "${workspaceFolder:odoo}/addons/google_calendar/static/",
+          "http://localhost:18069/payment_buckaroo/static/": "${workspaceFolder:odoo}/addons/payment_buckaroo/static/",
+          "http://localhost:18069/sale_edi_ubl/static/": "${workspaceFolder:odoo}/addons/sale_edi_ubl/static/",
+          "http://localhost:18069/purchase_mrp/static/": "${workspaceFolder:odoo}/addons/purchase_mrp/static/",
+          "http://localhost:18069/phone_validation/static/": "${workspaceFolder:odoo}/addons/phone_validation/static/",
+          "http://localhost:18069/l10n_it_edi_ndd/static/": "${workspaceFolder:odoo}/addons/l10n_it_edi_ndd/static/",
+          "http://localhost:18069/base_import/static/": "${workspaceFolder:odoo}/addons/base_import/static/",
+          "http://localhost:18069/event_crm_sale/static/": "${workspaceFolder:odoo}/addons/event_crm_sale/static/",
+          "http://localhost:18069/l10n_id_efaktur_coretax/static/": "${workspaceFolder:odoo}/addons/l10n_id_efaktur_coretax/static/",
+          "http://localhost:18069/l10n_eu_oss/static/": "${workspaceFolder:odoo}/addons/l10n_eu_oss/static/",
+          "http://localhost:18069/pos_sale/static/": "${workspaceFolder:odoo}/addons/pos_sale/static/",
+          "http://localhost:18069/website_cf_turnstile/static/": "${workspaceFolder:odoo}/addons/website_cf_turnstile/static/",
+          "http://localhost:18069/l10n_us/static/": "${workspaceFolder:odoo}/addons/l10n_us/static/",
+          "http://localhost:18069/hr_skills_survey/static/": "${workspaceFolder:odoo}/addons/hr_skills_survey/static/",
+          "http://localhost:18069/delivery/static/": "${workspaceFolder:odoo}/addons/delivery/static/",
+          "http://localhost:18069/cloud_storage_google/static/": "${workspaceFolder:odoo}/addons/cloud_storage_google/static/",
+          "http://localhost:18069/sale_gelato/static/": "${workspaceFolder:odoo}/addons/sale_gelato/static/",
+          "http://localhost:18069/project_mrp_stock_landed_costs/static/": "${workspaceFolder:odoo}/addons/project_mrp_stock_landed_costs/static/",
+          "http://localhost:18069/l10n_cd/static/": "${workspaceFolder:odoo}/addons/l10n_cd/static/",
+          "http://localhost:18069/mrp/static/": "${workspaceFolder:odoo}/addons/mrp/static/",
+          "http://localhost:18069/hr_recruitment_survey/static/": "${workspaceFolder:odoo}/addons/hr_recruitment_survey/static/",
+          "http://localhost:18069/l10n_mx/static/": "${workspaceFolder:odoo}/addons/l10n_mx/static/",
+          "http://localhost:18069/l10n_fi/static/": "${workspaceFolder:odoo}/addons/l10n_fi/static/",
+          "http://localhost:18069/website_mass_mailing_sms/static/": "${workspaceFolder:odoo}/addons/website_mass_mailing_sms/static/",
+          "http://localhost:18069/website_sale_gelato/static/": "${workspaceFolder:odoo}/addons/website_sale_gelato/static/",
+          "http://localhost:18069/website_sale_loyalty/static/": "${workspaceFolder:odoo}/addons/website_sale_loyalty/static/",
+          "http://localhost:18069/website_event_track/static/": "${workspaceFolder:odoo}/addons/website_event_track/static/",
+          "http://localhost:18069/social_media/static/": "${workspaceFolder:odoo}/addons/social_media/static/",
+          "http://localhost:18069/stock_dropshipping/static/": "${workspaceFolder:odoo}/addons/stock_dropshipping/static/",
+          "http://localhost:18069/event_sale/static/": "${workspaceFolder:odoo}/addons/event_sale/static/",
+          "http://localhost:18069/mass_mailing_themes/static/": "${workspaceFolder:odoo}/addons/mass_mailing_themes/static/",
+          "http://localhost:18069/l10n_lt/static/": "${workspaceFolder:odoo}/addons/l10n_lt/static/",
+          "http://localhost:18069/project_stock_landed_costs/static/": "${workspaceFolder:odoo}/addons/project_stock_landed_costs/static/",
+          "http://localhost:18069/auth_ldap/static/": "${workspaceFolder:odoo}/addons/auth_ldap/static/",
+          "http://localhost:18069/mrp_product_expiry/static/": "${workspaceFolder:odoo}/addons/mrp_product_expiry/static/",
+          "http://localhost:18069/payment_authorize/static/": "${workspaceFolder:odoo}/addons/payment_authorize/static/",
+          "http://localhost:18069/pos_event/static/": "${workspaceFolder:odoo}/addons/pos_event/static/",
+          "http://localhost:18069/sale_purchase_project/static/": "${workspaceFolder:odoo}/addons/sale_purchase_project/static/",
+          "http://localhost:18069/auth_signup/static/": "${workspaceFolder:odoo}/addons/auth_signup/static/",
+          "http://localhost:18069/l10n_sa_pos/static/": "${workspaceFolder:odoo}/addons/l10n_sa_pos/static/",
+          "http://localhost:18069/microsoft_calendar/static/": "${workspaceFolder:odoo}/addons/microsoft_calendar/static/",
+          "http://localhost:18069/l10n_ec_website_sale/static/": "${workspaceFolder:odoo}/addons/l10n_ec_website_sale/static/",
+          "http://localhost:18069/l10n_in_edi/static/": "${workspaceFolder:odoo}/addons/l10n_in_edi/static/",
+          "http://localhost:18069/purchase_requisition_sale/static/": "${workspaceFolder:odoo}/addons/purchase_requisition_sale/static/",
+          "http://localhost:18069/l10n_ie/static/": "${workspaceFolder:odoo}/addons/l10n_ie/static/",
+          "http://localhost:18069/product/static/": "${workspaceFolder:odoo}/addons/product/static/",
+          "http://localhost:18069/sale_stock/static/": "${workspaceFolder:odoo}/addons/sale_stock/static/",
+          "http://localhost:18069/product_images/static/": "${workspaceFolder:odoo}/addons/product_images/static/",
+          "http://localhost:18069/l10n_ug/static/": "${workspaceFolder:odoo}/addons/l10n_ug/static/",
+          "http://localhost:18069/test_discuss_full/static/": "${workspaceFolder:odoo}/addons/test_discuss_full/static/",
+          "http://localhost:18069/transifex/static/": "${workspaceFolder:odoo}/addons/transifex/static/",
+          "http://localhost:18069/l10n_in_sale_stock/static/": "${workspaceFolder:odoo}/addons/l10n_in_sale_stock/static/",
+          "http://localhost:18069/project_purchase/static/": "${workspaceFolder:odoo}/addons/project_purchase/static/",
+          "http://localhost:18069/l10n_ar_website_sale/static/": "${workspaceFolder:odoo}/addons/l10n_ar_website_sale/static/",
+          "http://localhost:18069/stock/static/": "${workspaceFolder:odoo}/addons/stock/static/",
+          "http://localhost:18069/l10n_ar_withholding/static/": "${workspaceFolder:odoo}/addons/l10n_ar_withholding/static/",
+          "http://localhost:18069/l10n_ng/static/": "${workspaceFolder:odoo}/addons/l10n_ng/static/",
+          "http://localhost:18069/cloud_storage_azure/static/": "${workspaceFolder:odoo}/addons/cloud_storage_azure/static/",
+          "http://localhost:18069/l10n_ch_pos/static/": "${workspaceFolder:odoo}/addons/l10n_ch_pos/static/",
+          "http://localhost:18069/pos_hr_restaurant/static/": "${workspaceFolder:odoo}/addons/pos_hr_restaurant/static/",
+          "http://localhost:18069/l10n_cn_city/static/": "${workspaceFolder:odoo}/addons/l10n_cn_city/static/",
+          "http://localhost:18069/base_vat/static/": "${workspaceFolder:odoo}/addons/base_vat/static/",
+          "http://localhost:18069/website_event_booth_sale_exhibitor/static/": "${workspaceFolder:odoo}/addons/website_event_booth_sale_exhibitor/static/",
+          "http://localhost:18069/l10n_bf/static/": "${workspaceFolder:odoo}/addons/l10n_bf/static/",
+          "http://localhost:18069/privacy_lookup/static/": "${workspaceFolder:odoo}/addons/privacy_lookup/static/",
+          "http://localhost:18069/mrp_subcontracting_landed_costs/static/": "${workspaceFolder:odoo}/addons/mrp_subcontracting_landed_costs/static/",
+          "http://localhost:18069/l10n_in_purchase_stock/static/": "${workspaceFolder:odoo}/addons/l10n_in_purchase_stock/static/",
+          "http://localhost:18069/web/static/": "${workspaceFolder:odoo}/addons/web/static/",
+          "http://localhost:18069/hr_livechat/static/": "${workspaceFolder:odoo}/addons/hr_livechat/static/",
+          "http://localhost:18069/l10n_cl/static/": "${workspaceFolder:odoo}/addons/l10n_cl/static/",
+          "http://localhost:18069/l10n_uk/static/": "${workspaceFolder:odoo}/addons/l10n_uk/static/",
+          "http://localhost:18069/delivery_mondialrelay/static/": "${workspaceFolder:odoo}/addons/delivery_mondialrelay/static/",
+          "http://localhost:18069/l10n_rs/static/": "${workspaceFolder:odoo}/addons/l10n_rs/static/",
+          "http://localhost:18069/test_base_automation/static/": "${workspaceFolder:odoo}/addons/test_base_automation/static/",
+          "http://localhost:18069/l10n_mt/static/": "${workspaceFolder:odoo}/addons/l10n_mt/static/",
+          "http://localhost:18069/crm_iap_mine/static/": "${workspaceFolder:odoo}/addons/crm_iap_mine/static/",
+          "http://localhost:18069/l10n_kw/static/": "${workspaceFolder:odoo}/addons/l10n_kw/static/",
+          "http://localhost:18069/hw_escpos/static/": "${workspaceFolder:odoo}/addons/hw_escpos/static/",
+          "http://localhost:18069/l10n_ke/static/": "${workspaceFolder:odoo}/addons/l10n_ke/static/",
+          "http://localhost:18069/l10n_it_edi_withholding/static/": "${workspaceFolder:odoo}/addons/l10n_it_edi_withholding/static/",
+          "http://localhost:18069/website_crm_iap_reveal/static/": "${workspaceFolder:odoo}/addons/website_crm_iap_reveal/static/",
+          "http://localhost:18069/project_hr_expense/static/": "${workspaceFolder:odoo}/addons/project_hr_expense/static/",
+          "http://localhost:18069/l10n_anz_ubl_pint/static/": "${workspaceFolder:odoo}/addons/l10n_anz_ubl_pint/static/",
+          "http://localhost:18069/l10n_fr_hr_holidays/static/": "${workspaceFolder:odoo}/addons/l10n_fr_hr_holidays/static/",
+          "http://localhost:18069/spreadsheet_account/static/": "${workspaceFolder:odoo}/addons/spreadsheet_account/static/",
+          "http://localhost:18069/hr/static/": "${workspaceFolder:odoo}/addons/hr/static/",
+          "http://localhost:18069/project_account/static/": "${workspaceFolder:odoo}/addons/project_account/static/",
+          "http://localhost:18069/account_edi_ubl_cii/static/": "${workspaceFolder:odoo}/addons/account_edi_ubl_cii/static/",
+          "http://localhost:18069/hr_timesheet/static/": "${workspaceFolder:odoo}/addons/hr_timesheet/static/",
+          "http://localhost:18069/mass_mailing_sale_sms/static/": "${workspaceFolder:odoo}/addons/mass_mailing_sale_sms/static/",
+          "http://localhost:18069/l10n_ro/static/": "${workspaceFolder:odoo}/addons/l10n_ro/static/",
+          "http://localhost:18069/l10n_ml/static/": "${workspaceFolder:odoo}/addons/l10n_ml/static/",
+          "http://localhost:18069/website_event_meet/static/": "${workspaceFolder:odoo}/addons/website_event_meet/static/",
+          "http://localhost:18069/stock_account/static/": "${workspaceFolder:odoo}/addons/stock_account/static/",
+          "http://localhost:18069/l10n_et/static/": "${workspaceFolder:odoo}/addons/l10n_et/static/",
+          "http://localhost:18069/pos_self_order_razorpay/static/": "${workspaceFolder:odoo}/addons/pos_self_order_razorpay/static/",
+          "http://localhost:18069/website_event_meet_quiz/static/": "${workspaceFolder:odoo}/addons/website_event_meet_quiz/static/",
+          "http://localhost:18069/website_sale_mass_mailing/static/": "${workspaceFolder:odoo}/addons/website_sale_mass_mailing/static/",
+          "http://localhost:18069/rating/static/": "${workspaceFolder:odoo}/addons/rating/static/",
+          "http://localhost:18069/resource/static/": "${workspaceFolder:odoo}/addons/resource/static/",
+          "http://localhost:18069/l10n_tr_nilvera_einvoice/static/": "${workspaceFolder:odoo}/addons/l10n_tr_nilvera_einvoice/static/",
+          "http://localhost:18069/l10n_ro_edi_stock_batch/static/": "${workspaceFolder:odoo}/addons/l10n_ro_edi_stock_batch/static/",
+          "http://localhost:18069/l10n_fr_hr_work_entry_holidays/static/": "${workspaceFolder:odoo}/addons/l10n_fr_hr_work_entry_holidays/static/",
+          "http://localhost:18069/product_expiry/static/": "${workspaceFolder:odoo}/addons/product_expiry/static/",
+          "http://localhost:18069/auth_totp_mail/static/": "${workspaceFolder:odoo}/addons/auth_totp_mail/static/",
+          "http://localhost:18069/link_tracker/static/": "${workspaceFolder:odoo}/addons/link_tracker/static/",
+          "http://localhost:18069/l10n_my/static/": "${workspaceFolder:odoo}/addons/l10n_my/static/",
+          "http://localhost:18069/l10n_it_edi_doi/static/": "${workspaceFolder:odoo}/addons/l10n_it_edi_doi/static/",
+          "http://localhost:18069/website_jitsi/static/": "${workspaceFolder:odoo}/addons/website_jitsi/static/",
+          "http://localhost:18069/l10n_ec_stock/static/": "${workspaceFolder:odoo}/addons/l10n_ec_stock/static/",
+          "http://localhost:18069/hr_skills_slides/static/": "${workspaceFolder:odoo}/addons/hr_skills_slides/static/",
+          "http://localhost:18069/pos_self_order_sale/static/": "${workspaceFolder:odoo}/addons/pos_self_order_sale/static/",
+          "http://localhost:18069/website_event_track_live/static/": "${workspaceFolder:odoo}/addons/website_event_track_live/static/",
+          "http://localhost:18069/l10n_bh/static/": "${workspaceFolder:odoo}/addons/l10n_bh/static/",
+          "http://localhost:18069/sale_product_matrix/static/": "${workspaceFolder:odoo}/addons/sale_product_matrix/static/",
+          "http://localhost:18069/resource_mail/static/": "${workspaceFolder:odoo}/addons/resource_mail/static/",
+          "http://localhost:18069/l10n_hr/static/": "${workspaceFolder:odoo}/addons/l10n_hr/static/",
+          "http://localhost:18069/test_mail_full/static/": "${workspaceFolder:odoo}/addons/test_mail_full/static/",
+          "http://localhost:18069/l10n_jp_ubl_pint/static/": "${workspaceFolder:odoo}/addons/l10n_jp_ubl_pint/static/",
+          "http://localhost:18069/mass_mailing_sale/static/": "${workspaceFolder:odoo}/addons/mass_mailing_sale/static/",
+          "http://localhost:18069/microsoft_account/static/": "${workspaceFolder:odoo}/addons/microsoft_account/static/",
+          "http://localhost:18069/l10n_ve/static/": "${workspaceFolder:odoo}/addons/l10n_ve/static/",
+          "http://localhost:18069/auth_totp_portal/static/": "${workspaceFolder:odoo}/addons/auth_totp_portal/static/",
+          "http://localhost:18069/test_event_full/static/": "${workspaceFolder:odoo}/addons/test_event_full/static/",
+          "http://localhost:18069/spreadsheet_dashboard_account/static/": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_account/static/",
+          "http://localhost:18069/website_sms/static/": "${workspaceFolder:odoo}/addons/website_sms/static/",
+          "http://localhost:18069/website_partner/static/": "${workspaceFolder:odoo}/addons/website_partner/static/",
+          "http://localhost:18069/l10n_sa/static/": "${workspaceFolder:odoo}/addons/l10n_sa/static/",
+          "http://localhost:18069/l10n_es_edi_facturae/static/": "${workspaceFolder:odoo}/addons/l10n_es_edi_facturae/static/",
+          "http://localhost:18069/website_event_crm/static/": "${workspaceFolder:odoo}/addons/website_event_crm/static/",
+          "http://localhost:18069/l10n_cf/static/": "${workspaceFolder:odoo}/addons/l10n_cf/static/",
+          "http://localhost:18069/mail_bot_hr/static/": "${workspaceFolder:odoo}/addons/mail_bot_hr/static/",
+          "http://localhost:18069/l10n_in_withholding/static/": "${workspaceFolder:odoo}/addons/l10n_in_withholding/static/",
+          "http://localhost:18069/l10n_br_website_sale/static/": "${workspaceFolder:odoo}/addons/l10n_br_website_sale/static/",
+          "http://localhost:18069/test_mail/static/": "${workspaceFolder:odoo}/addons/test_mail/static/",
+          "http://localhost:18069/partner_autocomplete/static/": "${workspaceFolder:odoo}/addons/partner_autocomplete/static/",
+          "http://localhost:18069/hr_homeworking_calendar/static/": "${workspaceFolder:odoo}/addons/hr_homeworking_calendar/static/",
+          "http://localhost:18069/base_sparse_field/static/": "${workspaceFolder:odoo}/addons/base_sparse_field/static/",
+          "http://localhost:18069/product_matrix/static/": "${workspaceFolder:odoo}/addons/product_matrix/static/",
+          "http://localhost:18069/purchase_edi_ubl_bis3/static/": "${workspaceFolder:odoo}/addons/purchase_edi_ubl_bis3/static/",
+          "http://localhost:18069/auth_totp/static/": "${workspaceFolder:odoo}/addons/auth_totp/static/",
+          "http://localhost:18069/website_payment_authorize/static/": "${workspaceFolder:odoo}/addons/website_payment_authorize/static/",
+          "http://localhost:18069/google_account/static/": "${workspaceFolder:odoo}/addons/google_account/static/",
+          "http://localhost:18069/account_edi_ubl_cii_tax_extension/static/": "${workspaceFolder:odoo}/addons/account_edi_ubl_cii_tax_extension/static/",
+          "http://localhost:18069/l10n_ec/static/": "${workspaceFolder:odoo}/addons/l10n_ec/static/",
+          "http://localhost:18069/website_google_map/static/": "${workspaceFolder:odoo}/addons/website_google_map/static/",
+          "http://localhost:18069/website_links/static/": "${workspaceFolder:odoo}/addons/website_links/static/",
+          "http://localhost:18069/l10n_ke_edi_tremol/static/": "${workspaceFolder:odoo}/addons/l10n_ke_edi_tremol/static/",
+          "http://localhost:18069/l10n_in_edi_ewaybill/static/": "${workspaceFolder:odoo}/addons/l10n_in_edi_ewaybill/static/",
+          "http://localhost:18069/l10n_pe/static/": "${workspaceFolder:odoo}/addons/l10n_pe/static/",
+          "http://localhost:18069/sale_timesheet/static/": "${workspaceFolder:odoo}/addons/sale_timesheet/static/",
+          "http://localhost:18069/l10n_jo_edi/static/": "${workspaceFolder:odoo}/addons/l10n_jo_edi/static/",
+          "http://localhost:18069/l10n_latam_check/static/": "${workspaceFolder:odoo}/addons/l10n_latam_check/static/",
+          "http://localhost:18069/payment_mollie/static/": "${workspaceFolder:odoo}/addons/payment_mollie/static/",
+          "http://localhost:18069/base_import_module/static/": "${workspaceFolder:odoo}/addons/base_import_module/static/",
+          "http://localhost:18069/web_hierarchy/static/": "${workspaceFolder:odoo}/addons/web_hierarchy/static/",
+          "http://localhost:18069/sale_timesheet_margin/static/": "${workspaceFolder:odoo}/addons/sale_timesheet_margin/static/",
+          "http://localhost:18069/sale_project/static/": "${workspaceFolder:odoo}/addons/sale_project/static/",
+          "http://localhost:18069/pos_adyen/static/": "${workspaceFolder:odoo}/addons/pos_adyen/static/",
+          "http://localhost:18069/l10n_zm_account/static/": "${workspaceFolder:odoo}/addons/l10n_zm_account/static/",
+          "http://localhost:18069/l10n_it_edi_website_sale/static/": "${workspaceFolder:odoo}/addons/l10n_it_edi_website_sale/static/",
+          "http://localhost:18069/l10n_in_gstin_status/static/": "${workspaceFolder:odoo}/addons/l10n_in_gstin_status/static/",
+          "http://localhost:18069/website_sale_stock_wishlist/static/": "${workspaceFolder:odoo}/addons/website_sale_stock_wishlist/static/",
+          "http://localhost:18069/l10n_pe_website_sale/static/": "${workspaceFolder:odoo}/addons/l10n_pe_website_sale/static/",
+          "http://localhost:18069/sale_purchase_stock/static/": "${workspaceFolder:odoo}/addons/sale_purchase_stock/static/",
+          "http://localhost:18069/payment_aps/static/": "${workspaceFolder:odoo}/addons/payment_aps/static/",
+          "http://localhost:18069/website_sale_stock/static/": "${workspaceFolder:odoo}/addons/website_sale_stock/static/",
+          "http://localhost:18069/mass_mailing_crm/static/": "${workspaceFolder:odoo}/addons/mass_mailing_crm/static/",
+          "http://localhost:18069/project_mrp_account/static/": "${workspaceFolder:odoo}/addons/project_mrp_account/static/",
+          "http://localhost:18069/pos_viva_wallet/static/": "${workspaceFolder:odoo}/addons/pos_viva_wallet/static/",
+          "http://localhost:18069/l10n_uy/static/": "${workspaceFolder:odoo}/addons/l10n_uy/static/",
+          "http://localhost:18069/l10n_se/static/": "${workspaceFolder:odoo}/addons/l10n_se/static/",
+          "http://localhost:18069/l10n_it/static/": "${workspaceFolder:odoo}/addons/l10n_it/static/",
+          "http://localhost:18069/payment_asiapay/static/": "${workspaceFolder:odoo}/addons/payment_asiapay/static/",
+          "http://localhost:18069/marketing_card/static/": "${workspaceFolder:odoo}/addons/marketing_card/static/",
+          "http://localhost:18069/account_test/static/": "${workspaceFolder:odoo}/addons/account_test/static/",
+          "http://localhost:18069/l10n_sa_edi/static/": "${workspaceFolder:odoo}/addons/l10n_sa_edi/static/",
+          "http://localhost:18069/l10n_cn/static/": "${workspaceFolder:odoo}/addons/l10n_cn/static/",
+          "http://localhost:18069/test_spreadsheet/static/": "${workspaceFolder:odoo}/addons/test_spreadsheet/static/",
+          "http://localhost:18069/project_sale_expense/static/": "${workspaceFolder:odoo}/addons/project_sale_expense/static/",
+          "http://localhost:18069/website_sale_slides/static/": "${workspaceFolder:odoo}/addons/website_sale_slides/static/",
+          "http://localhost:18069/website_crm_partner_assign/static/": "${workspaceFolder:odoo}/addons/website_crm_partner_assign/static/",
+          "http://localhost:18069/analytic/static/": "${workspaceFolder:odoo}/addons/analytic/static/",
+          "http://localhost:18069/web_tour/static/": "${workspaceFolder:odoo}/addons/web_tour/static/",
+          "http://localhost:18069/website_event_jitsi/static/": "${workspaceFolder:odoo}/addons/website_event_jitsi/static/",
+          "http://localhost:18069/iap_crm/static/": "${workspaceFolder:odoo}/addons/iap_crm/static/",
+          "http://localhost:18069/website_event_sale/static/": "${workspaceFolder:odoo}/addons/website_event_sale/static/",
+          "http://localhost:18069/sale_loyalty/static/": "${workspaceFolder:odoo}/addons/sale_loyalty/static/",
+          "http://localhost:18069/project_todo/static/": "${workspaceFolder:odoo}/addons/project_todo/static/",
+          "http://localhost:18069/pos_stripe/static/": "${workspaceFolder:odoo}/addons/pos_stripe/static/",
+          "http://localhost:18069/l10n_iq/static/": "${workspaceFolder:odoo}/addons/l10n_iq/static/",
+          "http://localhost:18069/hr_attendance/static/": "${workspaceFolder:odoo}/addons/hr_attendance/static/",
+          "http://localhost:18069/l10n_sg/static/": "${workspaceFolder:odoo}/addons/l10n_sg/static/",
+          "http://localhost:18069/l10n_tg/static/": "${workspaceFolder:odoo}/addons/l10n_tg/static/",
+          "http://localhost:18069/l10n_gq/static/": "${workspaceFolder:odoo}/addons/l10n_gq/static/",
+          "http://localhost:18069/website_event_track_quiz/static/": "${workspaceFolder:odoo}/addons/website_event_track_quiz/static/",
+          "http://localhost:18069/pos_account_tax_python/static/": "${workspaceFolder:odoo}/addons/pos_account_tax_python/static/",
+          "http://localhost:18069/mrp_subcontracting_purchase/static/": "${workspaceFolder:odoo}/addons/mrp_subcontracting_purchase/static/",
+          "http://localhost:18069/point_of_sale/static/": "${workspaceFolder:odoo}/addons/point_of_sale/static/",
+          "http://localhost:18069/l10n_dz/static/": "${workspaceFolder:odoo}/addons/l10n_dz/static/",
+          "http://localhost:18069/l10n_gcc_pos/static/": "${workspaceFolder:odoo}/addons/l10n_gcc_pos/static/",
+          "http://localhost:18069/spreadsheet_dashboard_pos_hr/static/": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_pos_hr/static/",
+          "http://localhost:18069/hr_hourly_cost/static/": "${workspaceFolder:odoo}/addons/hr_hourly_cost/static/",
+          "http://localhost:18069/account_qr_code_sepa/static/": "${workspaceFolder:odoo}/addons/account_qr_code_sepa/static/",
+          "http://localhost:18069/l10n_latam_invoice_document/static/": "${workspaceFolder:odoo}/addons/l10n_latam_invoice_document/static/",
+          "http://localhost:18069/pos_restaurant_stripe/static/": "${workspaceFolder:odoo}/addons/pos_restaurant_stripe/static/",
+          "http://localhost:18069/l10n_de/static/": "${workspaceFolder:odoo}/addons/l10n_de/static/",
+          "http://localhost:18069/l10n_tn/static/": "${workspaceFolder:odoo}/addons/l10n_tn/static/",
+          "http://localhost:18069/l10n_br/static/": "${workspaceFolder:odoo}/addons/l10n_br/static/",
+          "http://localhost:18069/pos_self_order/static/": "${workspaceFolder:odoo}/addons/pos_self_order/static/",
+          "http://localhost:18069/barcodes/static/": "${workspaceFolder:odoo}/addons/barcodes/static/",
+          "http://localhost:18069/base_geolocalize/static/": "${workspaceFolder:odoo}/addons/base_geolocalize/static/",
+          "http://localhost:18069/website_sale/static/": "${workspaceFolder:odoo}/addons/website_sale/static/",
+          "http://localhost:18069/pos_loyalty/static/": "${workspaceFolder:odoo}/addons/pos_loyalty/static/",
+          "http://localhost:18069/l10n_ar_pos/static/": "${workspaceFolder:odoo}/addons/l10n_ar_pos/static/",
+          "http://localhost:18069/l10n_es/static/": "${workspaceFolder:odoo}/addons/l10n_es/static/",
+          "http://localhost:18069/payment_flutterwave/static/": "${workspaceFolder:odoo}/addons/payment_flutterwave/static/",
+          "http://localhost:18069/crm_livechat/static/": "${workspaceFolder:odoo}/addons/crm_livechat/static/",
+          "http://localhost:18069/l10n_cm/static/": "${workspaceFolder:odoo}/addons/l10n_cm/static/",
+          "http://localhost:18069/l10n_fr_facturx_chorus_pro/static/": "${workspaceFolder:odoo}/addons/l10n_fr_facturx_chorus_pro/static/",
+          "http://localhost:18069/board/static/": "${workspaceFolder:odoo}/addons/board/static/",
+          "http://localhost:18069/l10n_es_pos/static/": "${workspaceFolder:odoo}/addons/l10n_es_pos/static/",
+          "http://localhost:18069/http_routing/static/": "${workspaceFolder:odoo}/addons/http_routing/static/",
+          "http://localhost:18069/mrp_subcontracting_repair/static/": "${workspaceFolder:odoo}/addons/mrp_subcontracting_repair/static/",
+          "http://localhost:18069/l10n_tw/static/": "${workspaceFolder:odoo}/addons/l10n_tw/static/",
+          "http://localhost:18069/mrp_subcontracting_account/static/": "${workspaceFolder:odoo}/addons/mrp_subcontracting_account/static/",
+          "http://localhost:18069/spreadsheet_dashboard_sale/static/": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_sale/static/",
+          "http://localhost:18069/project_purchase_stock/static/": "${workspaceFolder:odoo}/addons/project_purchase_stock/static/",
+          "http://localhost:18069/pos_mrp/static/": "${workspaceFolder:odoo}/addons/pos_mrp/static/",
+          "http://localhost:18069/mrp_subcontracting/static/": "${workspaceFolder:odoo}/addons/mrp_subcontracting/static/",
+          "http://localhost:18069/payment_xendit/static/": "${workspaceFolder:odoo}/addons/payment_xendit/static/",
+          "http://localhost:18069/l10n_hr_kuna/static/": "${workspaceFolder:odoo}/addons/l10n_hr_kuna/static/",
+          "http://localhost:18069/l10n_din5008_purchase/static/": "${workspaceFolder:odoo}/addons/l10n_din5008_purchase/static/",
+          "http://localhost:18069/test_sale_product_configurators/static/": "${workspaceFolder:odoo}/addons/test_sale_product_configurators/static/",
+          "http://localhost:18069/l10n_gr/static/": "${workspaceFolder:odoo}/addons/l10n_gr/static/",
+          "http://localhost:18069/l10n_id/static/": "${workspaceFolder:odoo}/addons/l10n_id/static/",
+          "http://localhost:18069/mass_mailing_event/static/": "${workspaceFolder:odoo}/addons/mass_mailing_event/static/",
+          "http://localhost:18069/pos_sms/static/": "${workspaceFolder:odoo}/addons/pos_sms/static/",
+          "http://localhost:18069/l10n_be/static/": "${workspaceFolder:odoo}/addons/l10n_be/static/",
+          "http://localhost:18069/stock_delivery/static/": "${workspaceFolder:odoo}/addons/stock_delivery/static/",
+          "http://localhost:18069/payment_razorpay/static/": "${workspaceFolder:odoo}/addons/payment_razorpay/static/",
+          "http://localhost:18069/auth_password_policy/static/": "${workspaceFolder:odoo}/addons/auth_password_policy/static/",
+          "http://localhost:18069/project_hr_skills/static/": "${workspaceFolder:odoo}/addons/project_hr_skills/static/",
+          "http://localhost:18069/auth_password_policy_signup/static/": "${workspaceFolder:odoo}/addons/auth_password_policy_signup/static/",
+          "http://localhost:18069/website_crm_livechat/static/": "${workspaceFolder:odoo}/addons/website_crm_livechat/static/",
+          "http://localhost:18069/utm/static/": "${workspaceFolder:odoo}/addons/utm/static/",
+          "http://localhost:18069/l10n_din5008/static/": "${workspaceFolder:odoo}/addons/l10n_din5008/static/",
+          "http://localhost:18069/mail_group/static/": "${workspaceFolder:odoo}/addons/mail_group/static/",
+          "http://localhost:18069/project_stock_account/static/": "${workspaceFolder:odoo}/addons/project_stock_account/static/",
+          "http://localhost:18069/hr_calendar/static/": "${workspaceFolder:odoo}/addons/hr_calendar/static/",
+          "http://localhost:18069/website_slides_survey/static/": "${workspaceFolder:odoo}/addons/website_slides_survey/static/",
+          "http://localhost:18069/spreadsheet_dashboard_website_sale/static/": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_website_sale/static/",
+          "http://localhost:18069/spreadsheet_dashboard_event_sale/static/": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_event_sale/static/",
+          "http://localhost:18069/l10n_hu_edi/static/": "${workspaceFolder:odoo}/addons/l10n_hu_edi/static/",
+          "http://localhost:18069/l10n_us_account/static/": "${workspaceFolder:odoo}/addons/l10n_us_account/static/",
+          "http://localhost:18069/l10n_mc/static/": "${workspaceFolder:odoo}/addons/l10n_mc/static/",
+          "http://localhost:18069/purchase_product_matrix/static/": "${workspaceFolder:odoo}/addons/purchase_product_matrix/static/",
+          "http://localhost:18069/l10n_do/static/": "${workspaceFolder:odoo}/addons/l10n_do/static/",
+          "http://localhost:18069/website_event_exhibitor/static/": "${workspaceFolder:odoo}/addons/website_event_exhibitor/static/",
+          "http://localhost:18069/l10n_tz_account/static/": "${workspaceFolder:odoo}/addons/l10n_tz_account/static/",
+          "http://localhost:18069/l10n_vn_edi_viettel/static/": "${workspaceFolder:odoo}/addons/l10n_vn_edi_viettel/static/",
+          "http://localhost:18069/event_product/static/": "${workspaceFolder:odoo}/addons/event_product/static/",
+          "http://localhost:18069/l10n_my_edi/static/": "${workspaceFolder:odoo}/addons/l10n_my_edi/static/",
+          "http://localhost:18069/hr_fleet/static/": "${workspaceFolder:odoo}/addons/hr_fleet/static/",
+          "http://localhost:18069/snailmail_account/static/": "${workspaceFolder:odoo}/addons/snailmail_account/static/",
+          "http://localhost:18069/l10n_in/static/": "${workspaceFolder:odoo}/addons/l10n_in/static/",
+          "http://localhost:18069/purchase_requisition/static/": "${workspaceFolder:odoo}/addons/purchase_requisition/static/",
+          "http://localhost:18069/auth_oauth/static/": "${workspaceFolder:odoo}/addons/auth_oauth/static/",
+          "http://localhost:18069/l10n_th/static/": "${workspaceFolder:odoo}/addons/l10n_th/static/",
+          "http://localhost:18069/test_html_field_history/static/": "${workspaceFolder:odoo}/addons/test_html_field_history/static/",
+          "http://localhost:18069/mrp_account/static/": "${workspaceFolder:odoo}/addons/mrp_account/static/",
+          "http://localhost:18069/pos_restaurant_loyalty/static/": "${workspaceFolder:odoo}/addons/pos_restaurant_loyalty/static/",
+          "http://localhost:18069/l10n_pk/static/": "${workspaceFolder:odoo}/addons/l10n_pk/static/",
+          "http://localhost:18069/html_editor/static/": "${workspaceFolder:odoo}/addons/html_editor/static/",
+          "http://localhost:18069/project/static/": "${workspaceFolder:odoo}/addons/project/static/",
+          "http://localhost:18069/pos_hr/static/": "${workspaceFolder:odoo}/addons/pos_hr/static/",
+          "http://localhost:18069/spreadsheet_dashboard_hr_expense/static/": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_hr_expense/static/",
+          "http://localhost:18069/stock_fleet/static/": "${workspaceFolder:odoo}/addons/stock_fleet/static/",
+          "http://localhost:18069/l10n_rw/static/": "${workspaceFolder:odoo}/addons/l10n_rw/static/",
+          "http://localhost:18069/l10n_gcc_invoice_stock_account/static/": "${workspaceFolder:odoo}/addons/l10n_gcc_invoice_stock_account/static/",
+          "http://localhost:18069/l10n_ua/static/": "${workspaceFolder:odoo}/addons/l10n_ua/static/",
+          "http://localhost:18069/mass_mailing_crm_sms/static/": "${workspaceFolder:odoo}/addons/mass_mailing_crm_sms/static/",
+          "http://localhost:18069/website_payment/static/": "${workspaceFolder:odoo}/addons/website_payment/static/",
+          "http://localhost:18069/l10n_id_pos/static/": "${workspaceFolder:odoo}/addons/l10n_id_pos/static/",
+          "http://localhost:18069/l10n_in_stock/static/": "${workspaceFolder:odoo}/addons/l10n_in_stock/static/",
+          "http://localhost:18069/base_address_extended/static/": "${workspaceFolder:odoo}/addons/base_address_extended/static/",
+          "http://localhost:18069/sale_async_emails/static/": "${workspaceFolder:odoo}/addons/sale_async_emails/static/",
+          "http://localhost:18069/website_sale_comparison_wishlist/static/": "${workspaceFolder:odoo}/addons/website_sale_comparison_wishlist/static/",
+          "http://localhost:18069/website_event_booth_sale/static/": "${workspaceFolder:odoo}/addons/website_event_booth_sale/static/",
+          "http://localhost:18069/l10n_qa/static/": "${workspaceFolder:odoo}/addons/l10n_qa/static/",
+          "http://localhost:18069/l10n_be_pos_restaurant/static/": "${workspaceFolder:odoo}/addons/l10n_be_pos_restaurant/static/",
+          "http://localhost:18069/mass_mailing_event_track_sms/static/": "${workspaceFolder:odoo}/addons/mass_mailing_event_track_sms/static/",
+          "http://localhost:18069/event_crm/static/": "${workspaceFolder:odoo}/addons/event_crm/static/",
+          "http://localhost:18069/project_timesheet_holidays/static/": "${workspaceFolder:odoo}/addons/project_timesheet_holidays/static/",
+          "http://localhost:18069/l10n_dk_oioubl/static/": "${workspaceFolder:odoo}/addons/l10n_dk_oioubl/static/",
+          "http://localhost:18069/hw_posbox_homepage/static/": "${workspaceFolder:odoo}/addons/hw_posbox_homepage/static/",
+          "http://localhost:18069/web_unsplash/static/": "${workspaceFolder:odoo}/addons/web_unsplash/static/",
+          "http://localhost:18069/project_sms/static/": "${workspaceFolder:odoo}/addons/project_sms/static/",
+          "http://localhost:18069/project_mrp/static/": "${workspaceFolder:odoo}/addons/project_mrp/static/",
+          "http://localhost:18069/l10n_ae/static/": "${workspaceFolder:odoo}/addons/l10n_ae/static/",
+          "http://localhost:18069/l10n_fr_account/static/": "${workspaceFolder:odoo}/addons/l10n_fr_account/static/",
+          "http://localhost:18069/l10n_mt_pos/static/": "${workspaceFolder:odoo}/addons/l10n_mt_pos/static/",
+          "http://localhost:18069/l10n_ro_edi_stock/static/": "${workspaceFolder:odoo}/addons/l10n_ro_edi_stock/static/",
+          "http://localhost:18069/iap_mail/static/": "${workspaceFolder:odoo}/addons/iap_mail/static/",
+          "http://localhost:18069/spreadsheet_dashboard_im_livechat/static/": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_im_livechat/static/",
+          "http://localhost:18069/hr_timesheet_attendance/static/": "${workspaceFolder:odoo}/addons/hr_timesheet_attendance/static/",
+          "http://localhost:18069/cloud_storage/static/": "${workspaceFolder:odoo}/addons/cloud_storage/static/",
+          "http://localhost:18069/website_sale_mondialrelay/static/": "${workspaceFolder:odoo}/addons/website_sale_mondialrelay/static/",
+          "http://localhost:18069/base_iban/static/": "${workspaceFolder:odoo}/addons/base_iban/static/",
+          "http://localhost:18069/maintenance/static/": "${workspaceFolder:odoo}/addons/maintenance/static/",
+          "http://localhost:18069/purchase_stock/static/": "${workspaceFolder:odoo}/addons/purchase_stock/static/",
+          "http://localhost:18069/calendar_sms/static/": "${workspaceFolder:odoo}/addons/calendar_sms/static/",
+          "http://localhost:18069/hr_holidays_attendance/static/": "${workspaceFolder:odoo}/addons/hr_holidays_attendance/static/",
+          "http://localhost:18069/payment/static/": "${workspaceFolder:odoo}/addons/payment/static/",
+          "http://localhost:18069/l10n_hk/static/": "${workspaceFolder:odoo}/addons/l10n_hk/static/",
+          "http://localhost:18069/hr_work_entry_holidays/static/": "${workspaceFolder:odoo}/addons/hr_work_entry_holidays/static/",
+          "http://localhost:18069/payment_mercado_pago/static/": "${workspaceFolder:odoo}/addons/payment_mercado_pago/static/",
+          "http://localhost:18069/sale_management/static/": "${workspaceFolder:odoo}/addons/sale_management/static/",
+          "http://localhost:18069/spreadsheet/static/": "${workspaceFolder:odoo}/addons/spreadsheet/static/",
+          "http://localhost:18069/l10n_fi_sale/static/": "${workspaceFolder:odoo}/addons/l10n_fi_sale/static/",
+          "http://localhost:18069/l10n_mx_hr/static/": "${workspaceFolder:odoo}/addons/l10n_mx_hr/static/",
+          "http://localhost:18069/l10n_es_edi_tbai/static/": "${workspaceFolder:odoo}/addons/l10n_es_edi_tbai/static/",
+          "http://localhost:18069/l10n_ne/static/": "${workspaceFolder:odoo}/addons/l10n_ne/static/",
+          "http://localhost:18069/spreadsheet_dashboard/static/": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard/static/",
+          "http://localhost:18069/hr_work_entry/static/": "${workspaceFolder:odoo}/addons/hr_work_entry/static/",
+          "http://localhost:18069/mail_bot/static/": "${workspaceFolder:odoo}/addons/mail_bot/static/",
+          "http://localhost:18069/product_email_template/static/": "${workspaceFolder:odoo}/addons/product_email_template/static/",
+          "http://localhost:18069/hr_skills/static/": "${workspaceFolder:odoo}/addons/hr_skills/static/",
+          "http://localhost:18069/theme_default/static/": "${workspaceFolder:odoo}/addons/theme_default/static/",
+          "http://localhost:18069/google_gmail/static/": "${workspaceFolder:odoo}/addons/google_gmail/static/",
+          "http://localhost:18069/sale_project_stock_account/static/": "${workspaceFolder:odoo}/addons/sale_project_stock_account/static/",
+          "http://localhost:18069/l10n_ma/static/": "${workspaceFolder:odoo}/addons/l10n_ma/static/",
+          "http://localhost:18069/loyalty/static/": "${workspaceFolder:odoo}/addons/loyalty/static/",
+          "http://localhost:18069/mass_mailing_sms/static/": "${workspaceFolder:odoo}/addons/mass_mailing_sms/static/",
+          "http://localhost:18069/website_event_track_live_quiz/static/": "${workspaceFolder:odoo}/addons/website_event_track_live_quiz/static/",
+          "http://localhost:18069/l10n_ar/static/": "${workspaceFolder:odoo}/addons/l10n_ar/static/",
+          "http://localhost:18069/microsoft_outlook/static/": "${workspaceFolder:odoo}/addons/microsoft_outlook/static/",
+          "http://localhost:18069/l10n_hn/static/": "${workspaceFolder:odoo}/addons/l10n_hn/static/",
+          "http://localhost:18069/pos_sale_margin/static/": "${workspaceFolder:odoo}/addons/pos_sale_margin/static/",
+          "http://localhost:18069/product_margin/static/": "${workspaceFolder:odoo}/addons/product_margin/static/",
+          "http://localhost:18069/l10n_au/static/": "${workspaceFolder:odoo}/addons/l10n_au/static/",
+          "http://localhost:18069/payment_paypal/static/": "${workspaceFolder:odoo}/addons/payment_paypal/static/",
+          "http://localhost:18069/l10n_in_pos/static/": "${workspaceFolder:odoo}/addons/l10n_in_pos/static/",
+          "http://localhost:18069/fleet/static/": "${workspaceFolder:odoo}/addons/fleet/static/",
+          "http://localhost:18069/l10n_pe_pos/static/": "${workspaceFolder:odoo}/addons/l10n_pe_pos/static/",
+          "http://localhost:18069/gamification/static/": "${workspaceFolder:odoo}/addons/gamification/static/",
+          "http://localhost:18069/account_payment/static/": "${workspaceFolder:odoo}/addons/account_payment/static/",
+          "http://localhost:18069/pos_restaurant/static/": "${workspaceFolder:odoo}/addons/pos_restaurant/static/",
+          "http://localhost:18069/l10n_za/static/": "${workspaceFolder:odoo}/addons/l10n_za/static/",
+          "http://localhost:18069/delivery_stock_picking_batch/static/": "${workspaceFolder:odoo}/addons/delivery_stock_picking_batch/static/",
+          "http://localhost:18069/mail_plugin/static/": "${workspaceFolder:odoo}/addons/mail_plugin/static/",
+          "http://localhost:18069/bus/static/": "${workspaceFolder:odoo}/addons/bus/static/",
+          "http://localhost:18069/website_slides_forum/static/": "${workspaceFolder:odoo}/addons/website_slides_forum/static/",
+          "http://localhost:18069/website_event_booth/static/": "${workspaceFolder:odoo}/addons/website_event_booth/static/",
+          "http://localhost:18069/l10n_cg/static/": "${workspaceFolder:odoo}/addons/l10n_cg/static/",
+          "http://localhost:18069/spreadsheet_dashboard_website_sale_slides/static/": "${workspaceFolder:odoo}/addons/spreadsheet_dashboard_website_sale_slides/static/",
+          "http://localhost:18069/pos_self_order_epson_printer/static/": "${workspaceFolder:odoo}/addons/pos_self_order_epson_printer/static/",
+          "http://localhost:18069/l10n_co_pos/static/": "${workspaceFolder:odoo}/addons/l10n_co_pos/static/",
+          "http://localhost:18069/sale_gelato_stock/static/": "${workspaceFolder:odoo}/addons/sale_gelato_stock/static/",
+          "http://localhost:18069/auth_password_policy_portal/static/": "${workspaceFolder:odoo}/addons/auth_password_policy_portal/static/",
+          "http://localhost:18069/hr_presence/static/": "${workspaceFolder:odoo}/addons/hr_presence/static/",
+          "http://localhost:18069/l10n_fr_pos_cert/static/": "${workspaceFolder:odoo}/addons/l10n_fr_pos_cert/static/",
+          "http://localhost:18069/stock_sms/static/": "${workspaceFolder:odoo}/addons/stock_sms/static/",
+          "http://localhost:18069/base_automation/static/": "${workspaceFolder:odoo}/addons/base_automation/static/",
+          "http://localhost:18069/website_forum/static/": "${workspaceFolder:odoo}/addons/website_forum/static/",
+          "http://localhost:18069/l10n_co/static/": "${workspaceFolder:odoo}/addons/l10n_co/static/",
+          "http://localhost:18069/l10n_lb_account/static/": "${workspaceFolder:odoo}/addons/l10n_lb_account/static/",
+          "http://localhost:18069/test_mail_sms/static/": "${workspaceFolder:odoo}/addons/test_mail_sms/static/",
+          "http://localhost:18069/l10n_bj/static/": "${workspaceFolder:odoo}/addons/l10n_bj/static/",
+          "http://localhost:18069/event/static/": "${workspaceFolder:odoo}/addons/event/static/",
+          "http://localhost:18069/mail/static/": "${workspaceFolder:odoo}/addons/mail/static/",
+          "http://localhost:18069/mrp_landed_costs/static/": "${workspaceFolder:odoo}/addons/mrp_landed_costs/static/",
+          "http://localhost:18069/l10n_ch/static/": "${workspaceFolder:odoo}/addons/l10n_ch/static/",
+          "http://localhost:18069/l10n_no/static/": "${workspaceFolder:odoo}/addons/l10n_no/static/",
+          "http://localhost:18069/onboarding/static/": "${workspaceFolder:odoo}/addons/onboarding/static/",
+          "http://localhost:18069/event_sms/static/": "${workspaceFolder:odoo}/addons/event_sms/static/",
+          "http://localhost:18069/website_slides/static/": "${workspaceFolder:odoo}/addons/website_slides/static/",
+          "http://localhost:18069/sale_sms/static/": "${workspaceFolder:odoo}/addons/sale_sms/static/",
+          "http://localhost:18069/website_mail_group/static/": "${workspaceFolder:odoo}/addons/website_mail_group/static/",
+          "http://localhost:18069/sale_crm/static/": "${workspaceFolder:odoo}/addons/sale_crm/static/",
+          "http://localhost:18069/l10n_mz/static/": "${workspaceFolder:odoo}/addons/l10n_mz/static/",
+          "http://localhost:18069/l10n_kr/static/": "${workspaceFolder:odoo}/addons/l10n_kr/static/",
+          "http://localhost:18069/pos_self_order_adyen/static/": "${workspaceFolder:odoo}/addons/pos_self_order_adyen/static/",
+          "http://localhost:18069/sale_stock_margin/static/": "${workspaceFolder:odoo}/addons/sale_stock_margin/static/",
+          "http://localhost:18069/pos_mercado_pago/static/": "${workspaceFolder:odoo}/addons/pos_mercado_pago/static/",
+          "http://localhost:18069/l10n_nz/static/": "${workspaceFolder:odoo}/addons/l10n_nz/static/",
+          "http://localhost:18069/payment_adyen/static/": "${workspaceFolder:odoo}/addons/payment_adyen/static/",
+          "http://localhost:18069/test_website_slides_full/static/": "${workspaceFolder:odoo}/addons/test_website_slides_full/static/",
+          "http://localhost:18069/payment_razorpay_oauth/static/": "${workspaceFolder:odoo}/addons/payment_razorpay_oauth/static/",
+          "http://localhost:18069/l10n_din5008_sale/static/": "${workspaceFolder:odoo}/addons/l10n_din5008_sale/static/"
+        }
+      }
+    ]
+  },
+  "folders": [
+    {
+      "path": "src/odoo"
+    },
+    {
+      "path": "src/local"
+    },
+    {
+      "path": ".",
+      "name": "odoo-18"
+    }
+  ],
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Start Odoo",
+        "type": "process",
+        "command": "invoke",
+        "args": [
+          "start",
+          "--detach"
+        ],
+        "presentation": {
+          "echo": true,
+          "reveal": "silent",
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": [],
+        "options": {
+          "statusbar": {
+            "label": "$(play-circle) Start Odoo"
+          }
+        }
+      },
+      {
+        "label": "Install current module",
+        "type": "process",
+        "command": "invoke",
+        "args": [
+          "install",
+          "--cur-file",
+          "${file}",
+          "restart"
+        ],
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": true,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": [],
+        "options": {
+          "statusbar": {
+            "label": "$(symbol-property) Install module"
+          }
+        }
+      },
+      {
+        "label": "Update modules",
+        "type": "process",
+        "command": "invoke",
+        "args": [
+          "install",
+          "--cur-file",
+          "${file}",
+          "update"
+        ],
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": true,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": [],
+        "options": {
+          "statusbar": {
+            "label": "$(symbol-property) Update modules"
+          }
+        }
+      },
+      {
+        "label": "Run Odoo Tests for current module",
+        "type": "process",
+        "command": "invoke",
+        "args": [
+          "test",
+          "--cur-file",
+          "${file}"
+        ],
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": true,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": [],
+        "options": {
+          "statusbar": {
+            "label": "$(beaker) Test module"
+          }
+        }
+      },
+      {
+        "label": "Run Odoo Tests in debug mode for current module",
+        "type": "process",
+        "command": "invoke",
+        "args": [
+          "test",
+          "--cur-file",
+          "${file}",
+          "--debugpy"
+        ],
+        "presentation": {
+          "echo": true,
+          "reveal": "silent",
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": [],
+        "options": {
+          "statusbar": {
+            "hide": true
+          }
+        }
+      },
+      {
+        "label": "Start Odoo in debug mode",
+        "type": "process",
+        "command": "invoke",
+        "args": [
+          "start",
+          "--detach",
+          "--debugpy"
+        ],
+        "presentation": {
+          "echo": true,
+          "reveal": "silent",
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": [],
+        "options": {
+          "statusbar": {
+            "hide": true
+          }
+        }
+      },
+      {
+        "label": "Stop Odoo",
+        "type": "process",
+        "command": "invoke",
+        "args": [
+          "stop"
+        ],
+        "presentation": {
+          "echo": true,
+          "reveal": "silent",
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": [],
+        "options": {
+          "statusbar": {
+            "label": "$(stop-circle) Stop Odoo"
+          }
+        }
+      },
+      {
+        "label": "Restart Odoo",
+        "type": "process",
+        "command": "invoke",
+        "args": [
+          "restart"
+        ],
+        "presentation": {
+          "echo": true,
+          "reveal": "silent",
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": [],
+        "options": {
+          "statusbar": {
+            "label": "$(history) Restart Odoo"
+          }
+        }
+      },
+      {
+        "label": "See container logs",
+        "type": "process",
+        "command": "invoke",
+        "args": [
+          "logs"
+        ],
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": [],
+        "options": {
+          "statusbar": {
+            "label": "$(list-selection) See container logs"
+          }
+        }
+      }
+    ]
+  }
+}
