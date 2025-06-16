@@ -22,7 +22,18 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <field name="state" widget="statusbar"/>
+                    <!-- Status tugmalari -->
+                    <button name="action_confirm" type="object" string="Tasdiqlash"
+                            class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_deliver" type="object" string="Yetkazish"
+                            class="btn-success" invisible="state != 'confirmed'"/>
+                    <button name="action_cancel" type="object" string="Bekor qilish"
+                            class="btn-secondary" invisible="state in ('delivered', 'cancelled')"/>
+                    <button name="action_reset_to_draft" type="object" string="Qoralamaga qaytarish"
+                            class="btn-warning" invisible="state == 'draft'"/>
+
+                    <!-- Status bar -->
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,delivered"/>
                 </header>
                 <sheet>
                     <group>

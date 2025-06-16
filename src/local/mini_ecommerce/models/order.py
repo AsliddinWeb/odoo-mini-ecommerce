@@ -2,6 +2,7 @@ import random
 import string
 
 from odoo import api, fields, models
+from odoo.exceptions import UserError
 
 
 class Order(models.Model):
@@ -29,11 +30,13 @@ class Order(models.Model):
         "mini.order.line", "order_id", string="Buyurtma qatorlari"
     )
 
-    @api.model
-    def create(self, vals):
-        if not vals.get("name"):
-            vals["name"] = self._generate_order_number()
-        return super().create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if not vals.get("name"):
+                vals["name"] = self._generate_order_number()
+        records = super().create(vals_list)
+        return records
 
     def _generate_order_number(self):
         """Buyurtma raqamini generatsiya qilish"""
@@ -48,3 +51,42 @@ class Order(models.Model):
     def _compute_total_amount(self):
         for record in self:
             record.total_amount = sum(line.subtotal for line in record.order_line_ids)
+
+    # Statusni yangilovchi action methodlar
+    def action_confirm(self):
+        """Buyurtmani tasdiqlash"""
+        for record in self:
+            if record.state != "draft":
+                raise UserError(
+                    "Faqat qoralama holatidagi buyurtmalarni tasdiqlash mumkin!"
+                )
+            if not record.order_line_ids:
+                raise UserError(
+                    "Buyurtma qatorlarisiz buyurtmani tasdiqlash mumkin emas!"
+                )
+            record.state = "confirmed"
+
+    def action_deliver(self):
+        """Buyurtmani yetkazilgan deb belgilash"""
+        for record in self:
+            if record.state != "confirmed":
+                raise UserError(
+                    "Faqat tasdiqlangan buyurtmalarni yetkazilgan deb belgilash mumkin!"
+                )
+            record.state = "delivered"
+
+    def action_cancel(self):
+        """Buyurtmani bekor qilish"""
+        for record in self:
+            if record.state == "delivered":
+                raise UserError("Yetkazilgan buyurtmani bekor qilish mumkin emas!")
+            record.state = "cancelled"
+
+    def action_reset_to_draft(self):
+        """Buyurtmani qoralamaga qaytarish"""
+        for record in self:
+            if record.state == "delivered":
+                raise UserError(
+                    "Yetkazilgan buyurtmani qoralamaga qaytarish mumkin emas!"
+                )
+            record.state = "draft"
