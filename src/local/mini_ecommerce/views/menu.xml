@@ -11,5 +11,5 @@
     <!-- Mahsulotlar bo'limi -->
     <menuitem id="mini_ecommerce_products_menu" name="Mahsulotlar" parent="mini_ecommerce_menu_root" sequence="20"/>
     <menuitem id="product_menu" name="Mahsulotlar" parent="mini_ecommerce_products_menu" action="product_action" sequence="10"/>
-    <menuitem id="category_menu" name="Toifalar" parent="mini_ecommerce_products_menu" action="category_action" sequence="20"/>
+    <menuitem id="category_menu" name="Kategoriyalar" parent="mini_ecommerce_products_menu" action="category_action" sequence="20"/>
 </odoo>
