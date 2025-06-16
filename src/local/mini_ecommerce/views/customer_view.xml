@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Mijozlar Tree View -->
+    <!-- Mijozlar List View -->
     <record id="customer_tree_view" model="ir.ui.view">
         <field name="name">mini.customer.tree</field>
         <field name="model">mini.customer</field>
         <field name="arch" type="xml">
-            <tree>
-                <field name="full_name"/>
+            <list>
+                <field name="name"/>
+                <field name="surname"/>
                 <field name="phone"/>
                 <field name="email"/>
-                <field name="order_count"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -34,18 +34,6 @@
                     <group>
                         <field name="address"/>
                     </group>
-                    <notebook>
-                        <page string="Buyurtmalar">
-                            <field name="order_ids">
-                                <tree>
-                                    <field name="name"/>
-                                    <field name="date_order"/>
-                                    <field name="total_amount"/>
-                                    <field name="state"/>
-                                </tree>
-                            </field>
-                        </page>
-                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -55,6 +43,6 @@
     <record id="customer_action" model="ir.actions.act_window">
         <field name="name">Mijozlar</field>
         <field name="res_model">mini.customer</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 </odoo>

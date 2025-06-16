@@ -36,7 +36,7 @@ class Order(models.Model):
         return super().create(vals)
 
     def _generate_order_number(self):
-        """Noyob buyurtma raqamini generatsiya qilish"""
+        """Buyurtma raqamini generatsiya qilish"""
         while True:
             number = "ORD-" + "".join(
                 random.choices(string.ascii_uppercase + string.digits, k=8)

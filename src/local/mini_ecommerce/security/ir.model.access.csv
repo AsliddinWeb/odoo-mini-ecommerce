@@ -1,6 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_mini_customer_all,mini.customer.all,model_mini_customer,,1,1,1,1
-access_mini_category_all,mini.category.all,model_mini_category,,1,1,1,1
-access_mini_product_all,mini.product.all,model_mini_product,,1,1,1,1
-access_mini_order_all,mini.order.all,model_mini_order,,1,1,1,1
-access_mini_order_line_all,mini.order.line.all,model_mini_order_line,,1,1,1,1
+access_mini_customer_all,mini.customer.all,model_mini_customer,base.group_system,1,1,1,1
+access_mini_category_all,mini.category.all,model_mini_category,base.group_system,1,1,1,1
+access_mini_product_all,mini.product.all,model_mini_product,base.group_system,1,1,1,1
+access_mini_order_all,mini.order.all,model_mini_order,base.group_system,1,1,1,1
+access_mini_order_line_all,mini.order.line.all,model_mini_order_line,base.group_system,1,1,1,1
